@@ -211,6 +211,20 @@ section{position:relative;z-index:1;padding:80px 24px;}
   width:56px;height:56px;border-radius:14px;flex-shrink:0;
   object-fit:cover;box-shadow:0 6px 20px rgba(0,0,0,.4);
 }
+
+  .app-ios-btn {
+  position: relative;
+  z-index: 5;
+}
+
+.app-card::before {
+  z-index: 0;
+}
+
+.app-card * {
+  position: relative;
+  z-index: 1;
+}
 .app-icon-placeholder{
   width:56px;height:56px;border-radius:14px;flex-shrink:0;
   display:flex;align-items:center;justify-content:center;
