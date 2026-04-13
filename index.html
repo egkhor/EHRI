@@ -3,381 +3,374 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EGK Anti-Bully Careline & Smart Character Education</title>
+<title>EGK Humanitarian Resilience Initiative (EHRI) – Technology for Humanity</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Fredoka+One&family=Baloo+2:wght@500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Syne:wght@600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root {
-  --navy: #0A1F5C;
-  --royal: #1042B0;
-  --blue: #1565C0;
-  --sky: #2196F3;
-  --ice: #E3F2FD;
-  --gold: #FFD600;
-  --amber: #FF8F00;
-  --red: #D32F2F;
-  --crimson: #B71C1C;
-  --teal: #00897B;
-  --green: #2E7D32;
-  --soft: #F4F8FF;
-  --white: #FFFFFF;
-  --shadow: 0 8px 40px rgba(10,31,92,0.13);
-  --radius: 20px;
+  --ink:     #0B1120;
+  --deep:    #0D1F2D;
+  --teal:    #0E6E6A;
+  --teal2:   #12918B;
+  --olive:   #3D5A3E;
+  --sage:    #5C7A5D;
+  --amber:   #E8A020;
+  --gold:    #F5C842;
+  --cream:   #FAF5EC;
+  --sand:    #EDE8DC;
+  --red:     #C0392B;
+  --muted:   #8899AA;
+  --white:   #FFFFFF;
+  --card:    rgba(255,255,255,0.04);
+  --border:  rgba(255,255,255,0.09);
+  --r:       16px;
+  --sh:      0 8px 48px rgba(0,0,0,0.35);
 }
 *{margin:0;padding:0;box-sizing:border-box;}
 html{scroll-behavior:smooth;}
-body{font-family:'Baloo 2',cursive;background:var(--soft);color:var(--navy);overflow-x:hidden;}
+body{font-family:'Space Grotesk',sans-serif;background:var(--ink);color:#CBD5E1;overflow-x:hidden;}
 
 /* ── NAV ── */
 nav{
-  position:fixed;top:0;left:0;right:0;z-index:1000;
-  background:rgba(10,31,92,0.97);backdrop-filter:blur(14px);
-  padding:11px 32px;
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(11,17,32,0.96);backdrop-filter:blur(16px);
+  padding:12px 36px;border-bottom:1px solid var(--border);
   display:flex;align-items:center;justify-content:space-between;
-  box-shadow:0 2px 20px rgba(0,0,0,0.35);
 }
-.nav-logo{display:flex;align-items:center;gap:10px;}
-.nav-logo img{height:38px;border-radius:7px;}
-.nav-logo span{font-family:'Fredoka One',cursive;color:var(--gold);font-size:1.1rem;}
-.nav-links{display:flex;gap:6px;list-style:none;align-items:center;}
-.nav-links a{color:#B3D4FF;text-decoration:none;font-size:.85rem;font-weight:700;padding:5px 13px;border-radius:20px;transition:all .22s;}
-.nav-links a:hover{background:var(--gold);color:var(--navy);}
-.nav-cta{background:linear-gradient(135deg,var(--red),var(--crimson)) !important;color:white !important;font-weight:800 !important;padding:7px 18px !important;}
+.nav-brand{display:flex;align-items:center;gap:10px;}
+.nav-brand img{height:36px;border-radius:7px;}
+.nav-brand-text{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:.3px;}
+.nav-links{display:flex;gap:4px;list-style:none;align-items:center;}
+.nav-links a{color:#94A3B8;text-decoration:none;font-size:.82rem;font-weight:600;padding:6px 13px;border-radius:8px;transition:all .2s;}
+.nav-links a:hover{background:rgba(255,255,255,.07);color:var(--gold);}
+.nav-cta{background:var(--teal) !important;color:white !important;border-radius:8px !important;}
+.nav-cta:hover{background:var(--teal2) !important;}
 
 /* ── HERO ── */
 #hero{
   min-height:100vh;
-  background:linear-gradient(160deg,#060f2e 0%,#0d2560 38%,#1042B0 70%,#1565C0 100%);
+  background:
+    radial-gradient(ellipse 80% 60% at 70% 40%, rgba(14,110,106,.18) 0%, transparent 65%),
+    radial-gradient(ellipse 60% 50% at 10% 80%, rgba(61,90,62,.15) 0%, transparent 60%),
+    linear-gradient(170deg, #070C18 0%, #0B1120 50%, #0D1F2D 100%);
   display:flex;flex-direction:column;align-items:center;justify-content:center;
-  text-align:center;padding:110px 20px 70px;
+  text-align:center;padding:120px 24px 80px;
   position:relative;overflow:hidden;
 }
-.hero-bg-shield{
-  position:absolute;bottom:-80px;left:50%;transform:translateX(-50%);
-  width:900px;height:900px;border-radius:50%;
-  background:radial-gradient(circle,rgba(255,255,255,0.03) 0%,transparent 70%);
-  border:2px solid rgba(255,255,255,0.05);pointer-events:none;
+/* animated grid */
+.hero-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(14,110,106,.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(14,110,106,.06) 1px, transparent 1px);
+  background-size:60px 60px;
+  mask-image:radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
 }
-.hero-rings span{
-  position:absolute;border-radius:50%;border:1.5px solid rgba(255,255,255,0.07);
+.hero-pulse{
+  position:absolute;border-radius:50%;border:1px solid rgba(14,110,106,.2);
   top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
+  animation:expand 5s linear infinite;
 }
-.pulse-blob{
-  position:absolute;border-radius:50%;filter:blur(80px);opacity:0.18;pointer-events:none;
-}
-.pb1{width:500px;height:500px;background:#FFD600;top:-120px;right:-100px;animation:drift 9s infinite alternate;}
-.pb2{width:350px;height:350px;background:#D32F2F;bottom:-80px;left:-60px;animation:drift 11s infinite alternate-reverse;}
-@keyframes drift{0%{transform:translate(0,0)}100%{transform:translate(25px,18px)}}
+.hp1{width:300px;height:300px;animation-delay:0s;}
+.hp2{width:550px;height:550px;animation-delay:1.6s;}
+.hp3{width:800px;height:800px;animation-delay:3.2s;}
+@keyframes expand{0%{opacity:.5;transform:translate(-50%,-50%) scale(.7)}100%{opacity:0;transform:translate(-50%,-50%) scale(1.3)}}
 
-.hero-badge{
+.hero-eyebrow{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(211,47,47,0.25);border:1.5px solid rgba(211,47,47,0.6);
-  color:#FFCDD2;font-size:.82rem;font-weight:800;
-  padding:5px 18px;border-radius:50px;margin-bottom:18px;letter-spacing:1px;text-transform:uppercase;
-  animation:fadeDown .6s ease both;
+  border:1px solid rgba(232,160,32,.3);background:rgba(232,160,32,.08);
+  color:var(--amber);font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  padding:5px 16px;border-radius:50px;margin-bottom:22px;
+  animation:fadeup .6s ease both;
 }
-@keyframes fadeDown{from{opacity:0;transform:translateY(-18px)}to{opacity:1;transform:translateY(0)}}
-@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:translateY(0)}}
+@keyframes fadeup{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.hero-dot{width:7px;height:7px;border-radius:50%;background:var(--amber);animation:blink 1.4s infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
 
 .hero-title{
-  font-family:'Fredoka One',cursive;
-  font-size:clamp(2.2rem,6vw,4.6rem);
-  color:white;line-height:1.08;margin-bottom:8px;
-  text-shadow:0 4px 24px rgba(0,0,0,.4);
-  animation:fadeUp .7s .1s ease both;
+  font-family:'Syne',sans-serif;font-size:clamp(2.4rem,6vw,5rem);
+  font-weight:800;color:var(--white);line-height:1.05;margin-bottom:12px;
+  animation:fadeup .7s .1s ease both;
 }
-.hero-title .red{color:#FF5252;}
-.hero-title .gold{color:var(--gold);}
+.hero-title .teal{color:var(--teal2);}
+.hero-title .amber{color:var(--gold);}
 .hero-sub{
-  font-family:'Fredoka One',cursive;
-  font-size:clamp(.95rem,2.5vw,1.35rem);
-  color:#90CAF9;margin-bottom:22px;
-  animation:fadeUp .7s .2s ease both;
+  font-size:clamp(.95rem,2vw,1.2rem);color:#94A3B8;max-width:680px;margin:0 auto 16px;line-height:1.75;
+  animation:fadeup .7s .2s ease both;
 }
-.hero-desc{
-  font-size:1rem;color:#B3D4FF;max-width:620px;margin:0 auto 30px;line-height:1.8;
-  animation:fadeUp .7s .3s ease both;
+.hero-initiative{
+  font-family:'Syne',sans-serif;font-size:clamp(1rem,2.5vw,1.4rem);
+  color:var(--amber);letter-spacing:2px;text-transform:uppercase;font-weight:700;
+  margin-bottom:32px;animation:fadeup .7s .25s ease both;
 }
-.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;animation:fadeUp .7s .4s ease both;}
+
+/* Mushi floating */
+.mushi-hero{
+  width:clamp(130px,18vw,200px);
+  filter:drop-shadow(0 12px 40px rgba(232,160,32,.25));
+  animation:mfloat 4s ease-in-out infinite, fadeup .8s .3s ease both;
+  margin:0 auto 28px;display:block;
+}
+@keyframes mfloat{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-14px) rotate(2deg)}}
+
+.hero-btns{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;animation:fadeup .7s .4s ease both;}
 .btn{
   display:inline-flex;align-items:center;gap:8px;
-  padding:13px 28px;border-radius:50px;font-family:'Baloo 2',cursive;
-  font-size:.95rem;font-weight:800;text-decoration:none;cursor:pointer;border:none;transition:all .25s;
+  padding:12px 26px;border-radius:10px;font-family:'Space Grotesk',sans-serif;
+  font-size:.9rem;font-weight:700;text-decoration:none;cursor:pointer;border:none;transition:all .22s;
 }
-.btn-red{background:linear-gradient(135deg,#EF5350,#C62828);color:white;box-shadow:0 8px 28px rgba(211,47,47,.45);}
-.btn-red:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(211,47,47,.6);}
-.btn-gold{background:linear-gradient(135deg,var(--gold),var(--amber));color:var(--navy);box-shadow:0 8px 28px rgba(255,214,0,.4);}
-.btn-gold:hover{transform:translateY(-3px);}
-.btn-outline{background:rgba(255,255,255,.09);color:white;border:2px solid rgba(255,255,255,.3);}
-.btn-outline:hover{background:rgba(255,255,255,.18);transform:translateY(-3px);}
+.btn-teal{background:var(--teal);color:white;box-shadow:0 6px 24px rgba(14,110,106,.4);}
+.btn-teal:hover{background:var(--teal2);transform:translateY(-2px);}
+.btn-amber{background:var(--amber);color:#1a1000;box-shadow:0 6px 24px rgba(232,160,32,.35);}
+.btn-amber:hover{background:var(--gold);transform:translateY(-2px);}
+.btn-ghost{background:rgba(255,255,255,.06);color:#CBD5E1;border:1px solid var(--border);}
+.btn-ghost:hover{background:rgba(255,255,255,.12);transform:translateY(-2px);}
 
-.hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:9px;margin-top:26px;animation:fadeUp .7s .5s ease both;}
-.htag{background:rgba(255,255,255,.1);color:#B3D4FF;font-size:.78rem;font-weight:700;padding:4px 13px;border-radius:20px;border:1px solid rgba(255,255,255,.18);}
+.hero-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:28px;animation:fadeup .7s .5s ease both;}
+.htag{background:rgba(255,255,255,.05);border:1px solid var(--border);color:#64748B;font-size:.74rem;font-weight:600;padding:4px 13px;border-radius:50px;}
 
-/* ── SECTION COMMON ── */
-section{position:relative;z-index:1;padding:80px 20px;}
-.container{max-width:1180px;margin:0 auto;}
-.section-label{
-  display:inline-block;
-  background:linear-gradient(135deg,var(--red),var(--crimson));
-  color:white;font-size:.75rem;font-weight:900;
-  padding:4px 16px;border-radius:50px;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:12px;
+/* sdg strip */
+.sdg-strip{
+  background:rgba(14,110,106,.12);border-top:1px solid rgba(14,110,106,.2);border-bottom:1px solid rgba(14,110,106,.2);
+  padding:16px 24px;text-align:center;
 }
-.section-label.blue{background:linear-gradient(135deg,var(--blue),var(--royal));}
-.section-label.gold{background:linear-gradient(135deg,var(--gold),var(--amber));color:var(--navy);}
-.section-title{font-family:'Fredoka One',cursive;font-size:clamp(1.7rem,4vw,2.8rem);color:var(--navy);line-height:1.2;margin-bottom:14px;}
-.section-title span{color:var(--royal);}
-.section-title .red{color:var(--red);}
-.section-desc{font-size:1rem;color:#4a5a7a;line-height:1.75;max-width:680px;}
+.sdg-strip-inner{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px;justify-content:center;align-items:center;}
+.sdg-label{font-size:.72rem;font-weight:700;color:var(--amber);text-transform:uppercase;letter-spacing:1px;margin-right:4px;}
+.sdg-pill{background:rgba(232,160,32,.1);border:1px solid rgba(232,160,32,.25);color:var(--amber);font-size:.72rem;font-weight:700;padding:3px 11px;border-radius:50px;}
+
+/* ── SECTIONS ── */
+section{position:relative;z-index:1;padding:80px 24px;}
+.container{max-width:1140px;margin:0 auto;}
+.sec-label{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--teal2);margin-bottom:12px;
+}
+.sec-label::before{content:'';display:inline-block;width:20px;height:2px;background:var(--teal2);}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(1.7rem,3.5vw,2.8rem);font-weight:800;color:var(--white);line-height:1.18;margin-bottom:14px;}
+.sec-title span{color:var(--teal2);}
+.sec-title .amber{color:var(--amber);}
+.sec-desc{font-size:.97rem;color:#64748B;line-height:1.8;max-width:640px;}
 .text-center{text-align:center;margin:0 auto;}
 
 /* ── ABOUT ── */
-#about{background:white;}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:46px;}
-.about-pills{display:flex;flex-wrap:wrap;gap:8px;margin:18px 0;}
-.pill{display:inline-flex;align-items:center;gap:6px;background:#EEF4FF;color:var(--royal);font-size:.83rem;font-weight:700;padding:5px 13px;border-radius:50px;border:1px solid #C5D5FF;}
-.about-quote{
-  background:linear-gradient(135deg,#FFF3F3,#FFEBEE);border-left:4px solid var(--red);
-  border-radius:0 12px 12px 0;padding:16px 20px;margin-top:22px;
-  font-style:italic;font-size:.97rem;color:#5a1a1a;line-height:1.7;
+#about{background:linear-gradient(180deg, #0B1120 0%, #0D1A28 100%);}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;margin-top:48px;}
+.about-mushi-wrap{position:relative;text-align:center;}
+.about-mushi{width:clamp(180px,30vw,280px);filter:drop-shadow(0 20px 50px rgba(232,160,32,.2));animation:mfloat 5s ease-in-out infinite;}
+.about-ring{
+  position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:320px;height:320px;border-radius:50%;
+  border:1px dashed rgba(232,160,32,.2);
+  animation:spin 25s linear infinite;
 }
-.stat-row{display:flex;gap:20px;margin-top:24px;flex-wrap:wrap;}
-.stat-box{
-  background:linear-gradient(135deg,var(--navy),var(--royal));
-  border-radius:14px;padding:18px 22px;color:white;text-align:center;flex:1;min-width:100px;
-}
-.stat-num{font-family:'Fredoka One',cursive;font-size:2rem;color:var(--gold);display:block;}
-.stat-label{font-size:.78rem;color:#90CAF9;font-weight:700;}
-.about-img-wrap{position:relative;}
-.about-img-wrap img{width:100%;border-radius:22px;box-shadow:var(--shadow);}
-.about-sticker{
-  position:absolute;bottom:-14px;right:-14px;
-  background:linear-gradient(135deg,var(--red),var(--crimson));
-  color:white;border-radius:14px;padding:14px 18px;
-  font-weight:900;font-size:.85rem;text-align:center;line-height:1.4;
-  box-shadow:0 8px 24px rgba(183,28,28,.4);
-}
-.about-sticker strong{display:block;font-size:1.5rem;}
+@keyframes spin{to{transform:translate(-50%,-50%) rotate(360deg)}}
+.about-orb{position:absolute;border-radius:50%;background:var(--amber);width:8px;height:8px;top:12%;left:50%;animation:orbit 5s linear infinite;}
+@keyframes orbit{0%{transform:rotate(0deg) translateX(150px)}100%{transform:rotate(360deg) translateX(150px)}}
 
-/* ── ANTI-BULLY BOOK ── */
-#antibully{background:linear-gradient(160deg,#0A0F2E,#0D2560,#1042B0);}
-#antibully .section-title{color:white;}
-#antibully .section-desc{color:#90CAF9;}
-.ab-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:60px;align-items:center;margin-top:46px;}
-.ab-book-display{display:flex;gap:14px;justify-content:center;align-items:flex-end;}
-.ab-book{
-  border-radius:14px;box-shadow:0 12px 40px rgba(0,0,0,.55);
-  transition:transform .3s;
+.about-text .about-desc{font-size:1rem;color:#94A3B8;line-height:1.85;margin-bottom:20px;}
+.about-text blockquote{
+  border-left:3px solid var(--teal2);padding:14px 20px;
+  background:rgba(14,110,106,.08);border-radius:0 10px 10px 0;
+  font-style:italic;font-size:.95rem;color:#CBD5E1;line-height:1.7;margin-bottom:20px;
 }
-.ab-book:hover{transform:scale(1.06) rotate(-2deg);}
-.ab-book.big{height:clamp(200px,30vw,280px);}
-.ab-book.sm{height:clamp(160px,24vw,220px);}
-
-.ab-chapters{display:flex;flex-direction:column;gap:10px;margin-top:22px;}
-.ab-chap{
-  display:flex;align-items:flex-start;gap:12px;
-  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);
-  border-radius:12px;padding:12px 16px;
+.stat-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;}
+.stat{
+  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:16px 20px;flex:1;min-width:90px;text-align:center;
 }
-.chap-num{
-  width:30px;height:30px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--red),var(--crimson));
-  color:white;font-weight:900;font-size:.82rem;
-  display:flex;align-items:center;justify-content:center;margin-top:2px;
+.stat-n{font-family:'Syne',sans-serif;font-size:1.8rem;font-weight:800;color:var(--gold);display:block;}
+.stat-l{font-size:.72rem;color:#64748B;font-weight:600;text-transform:uppercase;letter-spacing:.8px;}
+
+.unfpa-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(0,100,180,.12);border:1px solid rgba(0,140,220,.25);
+  border-radius:12px;padding:12px 18px;margin-top:16px;
 }
-.chap-title{font-weight:800;font-size:.88rem;color:white;margin-bottom:2px;}
-.chap-body{font-size:.78rem;color:#90CAF9;line-height:1.5;}
+.unfpa-badge-icon{font-size:1.5rem;}
+.unfpa-badge-text strong{display:block;font-size:.88rem;color:#60A5FA;}
+.unfpa-badge-text span{font-size:.76rem;color:#475569;}
 
-.bully-types{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px;}
-.btype{
-  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);
-  border-radius:12px;padding:14px;text-align:center;
-}
-.btype-icon{font-size:1.8rem;margin-bottom:6px;}
-.btype-name{font-weight:800;font-size:.85rem;color:var(--gold);}
-.btype-desc{font-size:.75rem;color:#90CAF9;}
-
-.isbn-tag{display:inline-block;background:rgba(255,255,255,.1);color:#B3D4FF;font-size:.75rem;font-weight:700;padding:3px 12px;border-radius:20px;margin-top:8px;}
-
-/* ── SMART CHARACTER BOOKS ── */
-#scbooks{background:white;}
-.sc-books-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:46px;}
-.sc-book-card{
-  background:var(--soft);border-radius:var(--radius);overflow:hidden;
-  box-shadow:var(--shadow);transition:all .32s;cursor:pointer;position:relative;
-}
-.sc-book-card:hover{transform:translateY(-9px) rotate(-.8deg);box-shadow:0 20px 60px rgba(10,31,92,.2);}
-.sc-covers{display:flex;gap:7px;padding:18px 18px 0;justify-content:center;}
-.sc-cover{width:47%;border-radius:10px;box-shadow:0 5px 18px rgba(0,0,0,.18);transition:transform .3s;}
-.sc-book-card:hover .sc-cover:first-child{transform:rotate(-3deg);}
-.sc-book-card:hover .sc-cover:last-child{transform:rotate(3deg);}
-.sc-info{padding:18px;}
-.sc-lang-tag{display:inline-block;font-size:.73rem;font-weight:900;padding:3px 11px;border-radius:50px;margin-bottom:9px;text-transform:uppercase;letter-spacing:1px;}
-.lt-en{background:#E3F2FD;color:#1565C0;}
-.lt-ms{background:#E8F5E9;color:#2E7D32;}
-.lt-zh{background:#FFF3E0;color:#E65100;}
-.sc-title{font-family:'Fredoka One',cursive;font-size:1.12rem;color:var(--navy);margin-bottom:4px;}
-.sc-sub{font-size:.83rem;color:#607d8b;margin-bottom:8px;}
-.sc-isbn{font-size:.74rem;color:#9e9e9e;}
-
-.ribbon{position:absolute;top:14px;left:-5px;background:var(--red);color:white;font-size:.68rem;font-weight:800;padding:3px 13px 3px 11px;border-radius:0 4px 4px 0;box-shadow:2px 2px 6px rgba(0,0,0,.2);}
-
-/* ── 18 VALUES ── */
-#values{background:linear-gradient(180deg,#F4F8FF,#EAF0FB);}
-.values-intro{max-width:720px;margin:0 auto 40px;text-align:center;}
-.values-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;}
-.val-card{
-  background:white;border-radius:14px;padding:16px 14px;
-  border-left:4px solid var(--royal);
-  box-shadow:0 3px 14px rgba(10,31,92,.08);
-  transition:transform .22s,box-shadow .22s;
-  text-align:center;
-}
-.val-card:hover{transform:translateY(-5px);box-shadow:0 10px 30px rgba(10,31,92,.15);}
-.val-num{font-family:'Fredoka One',cursive;font-size:1.3rem;color:rgba(16,66,176,.25);display:block;}
-.val-icon{font-size:1.6rem;margin:2px 0;}
-.val-name{font-weight:800;font-size:.83rem;color:var(--navy);margin-bottom:2px;}
-.val-malay{font-size:.72rem;color:#607d8b;}
-
-/* ── APP SECTION ── */
-#apps{background:linear-gradient(160deg,var(--navy),#0D2560);}
-#apps .section-title{color:white;}
-#apps .section-desc{color:#90CAF9;}
-.apps-grid{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:46px;}
+/* ── APPS GRID ── */
+#apps{background:#090E1A;}
+.apps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:48px;}
 .app-card{
-  background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);
-  border-radius:var(--radius);padding:28px 24px;
-  transition:all .3s;
+  background:var(--card);border:1px solid var(--border);
+  border-radius:var(--r);padding:26px 22px;
+  transition:all .32s;position:relative;overflow:hidden;
 }
-.app-card:hover{background:rgba(255,255,255,.12);transform:translateY(-6px);}
-.app-card-head{display:flex;align-items:center;gap:14px;margin-bottom:18px;}
-.app-icon-img{width:62px;height:62px;border-radius:16px;box-shadow:0 6px 20px rgba(0,0,0,.4);}
-.app-card-title{font-family:'Fredoka One',cursive;font-size:1.2rem;color:white;}
-.app-card-sub{font-size:.82rem;color:#90CAF9;}
-.app-feats{list-style:none;display:flex;flex-direction:column;gap:7px;margin:0 0 18px;}
-.app-feat-item{display:flex;align-items:flex-start;gap:9px;font-size:.85rem;color:#B3D4FF;}
-.feat-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;margin-top:7px;}
-.app-dl-row{display:flex;flex-direction:column;gap:8px;}
-.dl-btn{
-  display:flex;align-items:center;gap:10px;
-  background:rgba(255,255,255,.1);border:1.5px solid rgba(255,255,255,.22);
-  border-radius:12px;padding:9px 16px;text-decoration:none;color:white;
-  font-size:.83rem;font-weight:800;transition:all .22s;
+.app-card::before{
+  content:'';position:absolute;inset:0;opacity:0;transition:opacity .32s;
+  background:radial-gradient(ellipse at top left, rgba(14,110,106,.12) 0%, transparent 70%);
 }
-.dl-btn:hover{background:rgba(255,255,255,.2);transform:translateX(4px);}
-.dl-icon{font-size:1.5rem;}
-.dl-txt small{display:block;font-size:.65rem;opacity:.65;}
+.app-card:hover{border-color:rgba(14,110,106,.4);transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.4);}
+.app-card:hover::before{opacity:1;}
 
-/* ── SCENARIOS PREVIEW ── */
-#scenarios{background:white;}
-.scenarios-intro{max-width:720px;margin:0 auto 40px;text-align:center;}
-.scenario-tabs{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:28px;}
-.stab{
-  padding:8px 18px;border-radius:50px;background:#EEF4FF;color:var(--royal);
-  font-weight:800;font-size:.85rem;cursor:pointer;border:2px solid transparent;transition:all .2s;
+.app-card-top{display:flex;align-items:flex-start;gap:14px;margin-bottom:16px;}
+.app-icon{
+  width:56px;height:56px;border-radius:14px;flex-shrink:0;
+  object-fit:cover;box-shadow:0 6px 20px rgba(0,0,0,.4);
 }
-.stab.active,.stab:hover{background:var(--royal);color:white;}
-.scenario-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;}
-.scenario-card{
-  background:var(--soft);border-radius:14px;padding:16px 18px;
-  border-left:4px solid var(--blue);
-  box-shadow:0 3px 12px rgba(10,31,92,.07);
+.app-icon-placeholder{
+  width:56px;height:56px;border-radius:14px;flex-shrink:0;
+  display:flex;align-items:center;justify-content:center;
+  font-size:1.6rem;box-shadow:0 6px 20px rgba(0,0,0,.3);
 }
-.sc-num{font-size:.72rem;font-weight:900;color:var(--royal);text-transform:uppercase;letter-spacing:1px;margin-bottom:4px;}
-.sc-situation{font-weight:800;font-size:.9rem;color:var(--navy);margin-bottom:6px;}
-.sc-reflection{font-size:.8rem;color:#4a5a7a;line-height:1.55;}
-.sc-tag{display:inline-block;font-size:.68rem;font-weight:900;padding:2px 10px;border-radius:50px;margin-top:6px;}
-.tag-school{background:#E3F2FD;color:#1565C0;}
-.tag-online{background:#F3E5F5;color:#6A1B9A;}
-.tag-physical{background:#FFEBEE;color:#C62828;}
-.tag-social{background:#E8F5E9;color:#2E7D32;}
+.app-meta{}
+.app-name{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;color:var(--white);margin-bottom:3px;}
+.app-tag{font-size:.7rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:2px 9px;border-radius:50px;}
+.tag-offline{background:rgba(61,90,62,.4);color:#86EFAC;border:1px solid rgba(61,90,62,.6);}
+.tag-connect{background:rgba(14,110,106,.3);color:#5EEAD4;border:1px solid rgba(14,110,106,.5);}
+.tag-identity{background:rgba(99,60,20,.35);color:#FCD34D;border:1px solid rgba(180,110,40,.4);}
+.tag-critical{background:rgba(150,30,30,.3);color:#FCA5A5;border:1px solid rgba(150,30,30,.5);}
 
-.scenario-panel{display:none;}
-.scenario-panel.active{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:14px;}
-
-/* ── PRINCIPLES ── */
-#principles{background:linear-gradient(160deg,#FFF3E0,#FFF8E1);}
-.principles-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px;}
-.princ-card{
-  background:white;border-radius:var(--radius);padding:26px 20px;text-align:center;
-  box-shadow:0 4px 20px rgba(0,0,0,.07);transition:transform .28s;
+.app-desc{font-size:.83rem;color:#64748B;line-height:1.65;margin-bottom:16px;}
+.app-card-foot{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+.app-ios-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);
+  color:#94A3B8;font-size:.76rem;font-weight:700;
+  padding:6px 14px;border-radius:8px;text-decoration:none;transition:all .2s;
 }
-.princ-card:hover{transform:translateY(-7px);}
-.princ-icon{font-size:2.6rem;margin-bottom:12px;}
-.princ-title{font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--navy);margin-bottom:8px;}
-.princ-body{font-size:.85rem;color:#4a5a7a;line-height:1.65;}
-
-/* ── PROF QUOTE ── */
-#prof{background:linear-gradient(135deg,var(--navy),var(--royal));}
-.prof-inner{max-width:820px;margin:0 auto;text-align:center;}
-.prof-quote{
-  font-size:clamp(1rem,2.5vw,1.25rem);color:#E3F0FF;line-height:1.8;
-  font-style:italic;margin:24px 0;
+.app-ios-btn:hover{background:rgba(255,255,255,.12);color:white;}
+.app-offline-chip{
+  font-size:.68rem;font-weight:700;padding:3px 9px;border-radius:50px;
+  background:rgba(14,110,106,.2);color:var(--teal2);
 }
-.prof-quote::before{content:'"';font-size:4rem;color:rgba(255,214,0,.3);line-height:.4;vertical-align:middle;margin-right:8px;}
-.prof-name{font-family:'Fredoka One',cursive;font-size:1.05rem;color:var(--gold);}
-.prof-role{font-size:.82rem;color:#90CAF9;margin-top:4px;}
 
-/* ── CARELINE ── */
-#careline{background:linear-gradient(160deg,#B71C1C,#D32F2F,#E53935);}
-.careline-inner{text-align:center;max-width:700px;margin:0 auto;}
-#careline .section-title{color:white;}
-.careline-number{
-  font-family:'Fredoka One',cursive;font-size:clamp(2rem,6vw,4rem);
-  color:var(--gold);margin:16px 0;
-  text-shadow:0 4px 20px rgba(0,0,0,.3);
-  animation:pulse 2.5s ease-in-out infinite;
+/* NukeShield special card */
+.app-card.nuke{border-color:rgba(255,80,80,.15);}
+.app-card.nuke:hover{border-color:rgba(255,80,80,.4);}
+.app-card.nuke::before{background:radial-gradient(ellipse at top left, rgba(200,40,40,.1) 0%, transparent 70%)!important;}
+
+/* ── ARCHITECTURE ── */
+#arch{background:linear-gradient(180deg,#090E1A,#0B1120);}
+.arch-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center;margin-top:48px;}
+.arch-visual{position:relative;text-align:center;}
+.arch-mushi{width:clamp(140px,22vw,200px);filter:drop-shadow(0 16px 36px rgba(14,110,106,.3));animation:mfloat 4.5s ease-in-out infinite;}
+.arch-rings span{
+  position:absolute;border-radius:50%;border:1px solid rgba(14,110,106,.15);
+  top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;
 }
-@keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.04)}}
-.careline-desc{font-size:1rem;color:#FFCDD2;margin-bottom:28px;line-height:1.7;}
-.careline-steps{display:flex;gap:18px;justify-content:center;flex-wrap:wrap;margin-top:24px;}
-.cstep{background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.2);border-radius:14px;padding:18px 20px;text-align:center;min-width:140px;}
-.cstep-num{font-family:'Fredoka One',cursive;font-size:2rem;color:var(--gold);display:block;}
-.cstep-label{font-size:.82rem;color:#FFCDD2;font-weight:700;}
+.arch-feats{display:flex;flex-direction:column;gap:14px;margin-top:22px;}
+.arch-feat{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--card);border:1px solid var(--border);border-radius:12px;padding:16px 18px;
+}
+.arch-feat-icon{font-size:1.5rem;flex-shrink:0;}
+.arch-feat-title{font-weight:700;font-size:.9rem;color:var(--white);margin-bottom:3px;}
+.arch-feat-body{font-size:.8rem;color:#64748B;line-height:1.55;}
+
+/* ── SDGs ── */
+#sdgs{background:#090E1A;}
+.sdgs-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:48px;}
+.sdg-card{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px 18px;
+  display:flex;gap:14px;align-items:flex-start;transition:transform .25s;
+}
+.sdg-card:hover{transform:translateX(4px);}
+.sdg-num{
+  font-family:'Syne',sans-serif;font-size:1.5rem;font-weight:800;color:var(--gold);
+  flex-shrink:0;line-height:1;
+}
+.sdg-icon{font-size:1.5rem;flex-shrink:0;}
+.sdg-title{font-weight:700;font-size:.88rem;color:var(--white);margin-bottom:3px;}
+.sdg-body{font-size:.78rem;color:#64748B;line-height:1.55;}
+
+/* ── UN COLLAB ── */
+#un{
+  background:
+    radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,80,160,.1) 0%, transparent 70%),
+    linear-gradient(180deg,#0B1120,#091830);
+}
+.un-inner{max-width:860px;margin:0 auto;text-align:center;}
+.un-emblem{font-size:5rem;margin-bottom:16px;display:block;}
+.un-letter{
+  background:rgba(255,255,255,.03);border:1px solid var(--border);
+  border-radius:var(--r);padding:36px 40px;text-align:left;margin-top:36px;
+  position:relative;
+}
+.un-letter::before{
+  content:'OPEN LETTER';position:absolute;top:-11px;left:24px;
+  background:#091830;padding:0 10px;
+  font-size:.68rem;font-weight:700;letter-spacing:2px;color:var(--amber);
+}
+.un-letter p{font-size:.92rem;color:#94A3B8;line-height:1.85;margin-bottom:14px;}
+.un-letter p:last-child{margin-bottom:0;}
+.un-letter strong{color:var(--white);}
+
+.collab-items{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:32px;}
+.collab-item{
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:22px 18px;text-align:center;
+}
+.ci-icon{font-size:2rem;margin-bottom:8px;}
+.ci-title{font-weight:700;font-size:.9rem;color:var(--white);margin-bottom:5px;}
+.ci-body{font-size:.78rem;color:#64748B;line-height:1.55;}
+
+.un-mushi{width:120px;filter:drop-shadow(0 10px 28px rgba(232,160,32,.2));animation:mfloat 4s ease-in-out infinite;margin:24px auto 0;display:block;}
+
+/* ── UNFPA ── */
+#unfpa{background:linear-gradient(135deg,#0A1828,#0D1F2D);}
+.unfpa-inner{
+  max-width:820px;margin:0 auto;text-align:center;
+}
+.unfpa-quote{
+  font-family:'Syne',sans-serif;font-size:clamp(1.1rem,2.5vw,1.5rem);font-weight:700;
+  color:var(--white);line-height:1.6;margin:24px 0 16px;
+}
+.unfpa-quote .highlight{color:var(--teal2);}
+.unfpa-org{font-size:.88rem;color:var(--amber);font-weight:700;}
+.unfpa-sub{font-size:.8rem;color:#475569;margin-top:4px;}
 
 /* ── FOUNDER ── */
-#founder{background:white;}
-.founder-grid{display:grid;grid-template-columns:280px 1fr;gap:52px;align-items:center;margin-top:46px;}
-.founder-card{background:linear-gradient(160deg,var(--navy),var(--royal));border-radius:22px;padding:32px 24px;text-align:center;color:white;}
-.founder-avatar{font-size:3.5rem;margin-bottom:10px;}
-.founder-name{font-family:'Fredoka One',cursive;font-size:1.4rem;margin-bottom:4px;}
-.founder-role{font-size:.85rem;color:#90CAF9;}
-.founder-co{font-size:.8rem;color:var(--gold);margin-top:5px;font-weight:700;}
-.founder-quote{
-  border-left:4px solid var(--red);padding:18px 22px;margin:0 0 20px;
-  background:#FFF5F5;border-radius:0 12px 12px 0;
-  font-style:italic;font-size:1rem;color:var(--navy);line-height:1.75;
+#founder{background:#090E1A;}
+.founder-grid{display:grid;grid-template-columns:300px 1fr;gap:56px;align-items:start;margin-top:48px;}
+.founder-card{
+  background:var(--card);border:1px solid var(--border);border-radius:var(--r);
+  padding:30px 24px;text-align:center;position:relative;overflow:hidden;
 }
-.contact-list{display:flex;flex-direction:column;gap:10px;margin-top:18px;}
-.c-item{display:flex;align-items:center;gap:10px;font-size:.88rem;color:#4a5a7a;}
-.c-icon{font-size:1.1rem;color:var(--royal);}
+.founder-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--teal),var(--amber));}
+.founder-mushi{width:100px;margin:0 auto 16px;display:block;filter:drop-shadow(0 8px 20px rgba(232,160,32,.2));animation:mfloat 4s ease-in-out infinite;}
+.founder-name{font-family:'Syne',sans-serif;font-size:1.2rem;font-weight:800;color:var(--white);margin-bottom:4px;}
+.founder-role{font-size:.8rem;color:var(--teal2);}
+.founder-co{font-size:.75rem;color:#475569;margin-top:3px;}
+.founder-egk{height:36px;margin:14px auto 0;display:block;border-radius:6px;}
+.founder-contacts{display:flex;flex-direction:column;gap:9px;margin-top:18px;}
+.fc{display:flex;align-items:center;gap:9px;font-size:.8rem;color:#64748B;}
+.fc-i{color:var(--teal2);font-size:1rem;}
+
+.founder-text .founder-quote{
+  border-left:3px solid var(--amber);padding:16px 20px;
+  background:rgba(232,160,32,.06);border-radius:0 10px 10px 0;
+  font-style:italic;font-size:.97rem;color:#CBD5E1;line-height:1.8;margin-bottom:20px;
+}
+.founder-text p{font-size:.92rem;color:#64748B;line-height:1.8;margin-bottom:14px;}
 
 /* ── FOOTER ── */
-footer{background:var(--navy);color:#90CAF9;padding:48px 20px 22px;}
-.footer-inner{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr;gap:38px;padding-bottom:32px;border-bottom:1px solid rgba(255,255,255,.1);}
-.footer-logo img{height:46px;margin-bottom:12px;}
-.footer-about{font-size:.85rem;line-height:1.75;}
-.footer-title{font-weight:800;color:white;margin-bottom:12px;font-size:.92rem;}
+footer{background:#060B14;border-top:1px solid var(--border);padding:48px 24px 22px;}
+.footer-inner{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:2.2fr 1fr 1fr;gap:40px;padding-bottom:32px;border-bottom:1px solid var(--border);}
+.footer-brand img{height:40px;margin-bottom:12px;}
+.footer-about{font-size:.8rem;color:#475569;line-height:1.75;}
+.footer-title{font-size:.8rem;font-weight:700;color:#94A3B8;text-transform:uppercase;letter-spacing:.8px;margin-bottom:12px;}
 .footer-links{list-style:none;display:flex;flex-direction:column;gap:7px;}
-.footer-links a{color:#90CAF9;text-decoration:none;font-size:.85rem;transition:color .2s;}
-.footer-links a:hover{color:var(--gold);}
-.footer-bottom{max-width:1180px;margin:18px auto 0;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;font-size:.78rem;}
+.footer-links a{color:#475569;text-decoration:none;font-size:.8rem;transition:color .2s;}
+.footer-links a:hover{color:var(--amber);}
+.footer-bottom{max-width:1140px;margin:18px auto 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;font-size:.75rem;color:#334155;}
 
 /* ── SCROLL REVEAL ── */
-.reveal{opacity:0;transform:translateY(28px);transition:all .7s ease;}
+.reveal{opacity:0;transform:translateY(24px);transition:all .65s ease;}
 .reveal.visible{opacity:1;transform:translateY(0);}
 
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
-  .about-grid,.ab-grid,.apps-grid,.founder-grid,.footer-inner{grid-template-columns:1fr;}
-  .sc-books-grid,.principles-grid{grid-template-columns:1fr 1fr;}
+  .about-grid,.arch-grid,.founder-grid,.footer-inner{grid-template-columns:1fr;}
+  .apps-grid,.sdgs-grid,.collab-items{grid-template-columns:1fr 1fr;}
   nav{padding:10px 16px;}
   .nav-links{display:none;}
-  .about-img-wrap{display:none;}
 }
 @media(max-width:540px){
-  .sc-books-grid,.principles-grid,.values-grid{grid-template-columns:1fr;}
-  .bully-types{grid-template-columns:1fr 1fr;}
+  .apps-grid,.sdgs-grid,.collab-items{grid-template-columns:1fr;}
 }
 </style>
 </head>
@@ -385,176 +378,103 @@ footer{background:var(--navy);color:#90CAF9;padding:48px 20px 22px;}
 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">
+  <div class="nav-brand">
     <img src="https://egkhor.com.my/home/wp-content/uploads/2026/02/cropped-IMG_7598.png" alt="EGK">
-    <span>EGK Anti-Bully & Character</span>
+    <span class="nav-brand-text">EGK EHRI</span>
   </div>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
-    <li><a href="#antibully">Anti-Bully Book</a></li>
-    <li><a href="#scbooks">Character Books</a></li>
-    <li><a href="#values">18 Values</a></li>
-    <li><a href="#scenarios">Scenarios</a></li>
-    <li><a href="#apps">Apps</a></li>
-    <li><a href="#careline" class="nav-cta">🆘 Careline</a></li>
+    <li><a href="#apps">9 Apps</a></li>
+    <li><a href="#arch">Architecture</a></li>
+    <li><a href="#sdgs">UN SDGs</a></li>
+    <li><a href="#un">UN Letter</a></li>
+    <li><a href="#founder">Founder</a></li>
+    <li><a href="mailto:isaac@egkhor.com.my" class="nav-cta">🤝 Partner with Us</a></li>
   </ul>
 </nav>
 
 <!-- ══ HERO ══ -->
 <section id="hero">
-  <div class="pulse-blob pb1"></div>
-  <div class="pulse-blob pb2"></div>
-  <div class="hero-bg-shield"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-pulse hp1"></div>
+  <div class="hero-pulse hp2"></div>
+  <div class="hero-pulse hp3"></div>
 
-  <div class="hero-badge">🛡️ EGK Anti-Bully Initiative &nbsp;|&nbsp; Malaysia</div>
+  <div class="hero-eyebrow"><span class="hero-dot"></span>EGK Humanitarian Resilience Initiative</div>
+
+  <img class="mushi-hero" src="https://github.com/egkhor/EHRI/blob/main/MUSHI.png?raw=true" alt="Mushi">
+
   <h1 class="hero-title">
-    <span class="red">Stop Bully.</span><br>
-    Build <span class="gold">Noble Character.</span>
+    <span class="teal">Technology</span><br>
+    for <span class="amber">Humanity</span>
   </h1>
-  <p class="hero-sub">EGK Anti-Bully Careline & Smart Character Education Series</p>
-  <p class="hero-desc">
-    EGK's comprehensive anti-bullying initiative combines a dedicated careline app, 
-    the <em>Keberanian untuk Peduli</em> book (100 real-life bully scenarios), and the 
-    Smart Character Education series — 18 core values for every Malaysian primary child.
+  <div class="hero-initiative">EHRI — 9 Apps · Free · Offline-First</div>
+  <p class="hero-sub">
+    A civic humanitarian initiative delivering nine mobile applications designed for civilian survival, 
+    coordination, and resilience during wars, disasters, and infrastructure collapse.
   </p>
   <div class="hero-btns">
-    <a href="#careline" class="btn btn-red">🆘 Anti-Bully Careline App</a>
-    <a href="#antibully" class="btn btn-gold">📖 Keberanian untuk Peduli</a>
-    <a href="#scbooks" class="btn btn-outline">🌟 Character Education Books</a>
+    <a href="#apps" class="btn btn-teal">🛡️ Explore 9 Apps</a>
+    <a href="#un" class="btn btn-amber">🌐 UN Collaboration Letter</a>
+    <a href="mailto:isaac@egkhor.com.my" class="btn btn-ghost">🤝 Partner with Us</a>
   </div>
   <div class="hero-tags">
-    <span class="htag">🇲🇾 Made in Malaysia</span>
-    <span class="htag">📘 KSSR Aligned</span>
-    <span class="htag">🌐 3 Languages</span>
-    <span class="htag">📱 Free AR App</span>
-    <span class="htag">🎓 18 Core Values</span>
-    <span class="htag">🚔 PDRM Border App</span>
-    <span class="htag">100 Bully Scenarios</span>
+    <span class="htag">🌐 Offline-First Architecture</span>
+    <span class="htag">🆓 All Apps Free</span>
+    <span class="htag">🍎 iOS App Store</span>
+    <span class="htag">📡 Mesh Networking</span>
+    <span class="htag">🇲🇾 EGK Penang, Malaysia</span>
+    <span class="htag">🇺🇳 UNFPA Referred to UN Malaysia</span>
   </div>
 </section>
+
+<!-- SDG STRIP -->
+<div class="sdg-strip">
+  <div class="sdg-strip-inner">
+    <span class="sdg-label">🇺🇳 Aligns with UN SDGs:</span>
+    <span class="sdg-pill">SDG 3 · Good Health</span>
+    <span class="sdg-pill">SDG 9 · Innovation</span>
+    <span class="sdg-pill">SDG 10 · Reduced Inequalities</span>
+    <span class="sdg-pill">SDG 11 · Safe Cities</span>
+    <span class="sdg-pill">SDG 16 · Peace & Justice</span>
+    <span class="sdg-pill">SDG 17 · Partnerships</span>
+  </div>
+</div>
 
 <!-- ══ ABOUT ══ -->
 <section id="about">
   <div class="container">
     <div class="about-grid">
-      <div class="reveal">
-        <span class="section-label">About EGK's Mission</span>
-        <h2 class="section-title">Courage to <span class="red">Care</span></h2>
-        <p class="section-desc">
-          Every day, thousands of students step into school carrying fear, isolation, or invisible wounds — 
-          caused by words, mockery, exclusion, and actions often dismissed as "normal teasing."
-          EGK's anti-bully initiative believes change begins with one small decision: <strong>the decision to care.</strong>
+      <div class="about-mushi-wrap reveal">
+        <div class="about-ring"></div>
+        <div class="about-orb"></div>
+        <img class="about-mushi" src="https://github.com/egkhor/EHRI/blob/main/MUSHI.png?raw=true" alt="Mushi">
+      </div>
+      <div class="about-text reveal">
+        <div class="sec-label">The EHRI Mission</div>
+        <h2 class="sec-title">When Infrastructure Fails,<br><span>Humanity Must Not</span></h2>
+        <p class="about-desc">
+          During war, disasters, or major infrastructure disruptions, cellular service and internet connectivity 
+          often become unavailable. EGK's Humanitarian Resilience Initiative delivers a suite of nine 
+          <strong style="color:#CBD5E1">offline-first mobile applications</strong> — free of charge — ensuring 
+          civilians can access critical survival tools even in the harshest conditions.
         </p>
-        <div class="about-pills" style="margin-top:18px">
-          <span class="pill">🛡️ Anti-Bully Careline App</span>
-          <span class="pill">📖 Keberanian untuk Peduli</span>
-          <span class="pill">🌟 Smart Character Education</span>
-          <span class="pill">🚔 EGK PDRMBorder App</span>
-          <span class="pill">📱 EGK CharacterEdu AR App</span>
-          <span class="pill">✏️ KSSR Moral Ed Aligned</span>
-        </div>
-        <blockquote class="about-quote">
-          "Bullying doesn't always happen harshly or openly. The courage to stand up isn't just about fighting back — it's about choosing to care."
-          <br><strong>— Isaac Khor Eng Gian, Founder & Author</strong>
+        <blockquote>
+          "Technology should serve humanity, particularly during times of crisis and vulnerability. 
+          This initiative is not commercial in nature. It is a civic humanitarian effort."
+          <br><strong style="color:var(--amber)">— Isaac Khor Eng Gian, Founder</strong>
         </blockquote>
         <div class="stat-row">
-          <div class="stat-box"><strong class="stat-num">100</strong><span class="stat-label">Real Bully Scenarios</span></div>
-          <div class="stat-box"><strong class="stat-num">18</strong><span class="stat-label">Core Values</span></div>
-          <div class="stat-box"><strong class="stat-num">3</strong><span class="stat-label">Languages</span></div>
-          <div class="stat-box"><strong class="stat-num">4</strong><span class="stat-label">Apps & Books</span></div>
+          <div class="stat"><span class="stat-n">9</span><span class="stat-l">Crisis Apps</span></div>
+          <div class="stat"><span class="stat-n">FREE</span><span class="stat-l">All Apps</span></div>
+          <div class="stat"><span class="stat-n">📡</span><span class="stat-l">Offline-First</span></div>
+          <div class="stat"><span class="stat-n">6</span><span class="stat-l">UN SDGs</span></div>
         </div>
-      </div>
-      <div class="about-img-wrap reveal">
-        <img src="https://egkhor.com.my/home/wp-content/uploads/2026/01/KeberanianUntukPeduli.png" alt="Keberanian untuk Peduli">
-        <div class="about-sticker"><strong>NEW</strong>Feb 2026<br>Launch</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ ANTI-BULLY BOOK ══ -->
-<section id="antibully">
-  <div class="container">
-    <div class="ab-grid">
-      <div class="reveal">
-        <span class="section-label">Anti-Bully Book</span>
-        <h2 class="section-title" style="color:white">Keberanian untuk <span style="color:#FF5252">Peduli</span></h2>
-        <p style="color:#90CAF9;font-size:1rem;line-height:1.75;margin-bottom:20px;">
-          Malaysia's dedicated anti-bullying book — <strong style="color:white">100 real-life scenarios</strong> covering every form of bullying, 
-          designed to teach students, teachers, and parents how to identify, respond to, and overcome bullying situations safely and bravely.
-        </p>
-        <div class="bully-types">
-          <div class="btype">
-            <div class="btype-icon">👊</div>
-            <div class="btype-name">Physical</div>
-            <div class="btype-desc">Pushing, hitting, slapping</div>
-          </div>
-          <div class="btype">
-            <div class="btype-icon">🗣️</div>
-            <div class="btype-name">Verbal</div>
-            <div class="btype-desc">Name-calling, taunting, mockery</div>
-          </div>
-          <div class="btype">
-            <div class="btype-icon">🚪</div>
-            <div class="btype-name">Social</div>
-            <div class="btype-desc">Exclusion, spreading rumours</div>
-          </div>
-          <div class="btype">
-            <div class="btype-icon">📱</div>
-            <div class="btype-name">Cyberbully</div>
-            <div class="btype-desc">Online harassment via social media & apps</div>
-          </div>
-        </div>
-        <div class="ab-chapters">
-          <div class="ab-chap">
-            <div class="chap-num">1</div>
-            <div><div class="chap-title">Understanding Bullying</div><div class="chap-body">Types, principles of safety, meaningful support & correct reporting</div></div>
-          </div>
-          <div class="ab-chap">
-            <div class="chap-num">2</div>
-            <div><div class="chap-title">How to Use This Book</div><div class="chap-body">Read → Think → Reflect → Apply tips to build empathy & problem-solving</div></div>
-          </div>
-          <div class="ab-chap">
-            <div class="chap-num">3</div>
-            <div><div class="chap-title">School Scenarios (1–25)</div><div class="chap-body">Classroom, canteen, field, sports court — real Malaysian school situations</div></div>
-          </div>
-          <div class="ab-chap">
-            <div class="chap-num">4</div>
-            <div><div class="chap-title">Online & Social Scenarios (26–75)</div><div class="chap-body">Cyberbullying, social exclusion, messaging apps, group chats</div></div>
-          </div>
-          <div class="ab-chap">
-            <div class="chap-num">5</div>
-            <div><div class="chap-title">Community Scenarios (76–100)</div><div class="chap-body">Public spaces, home, neighbourhood — courage to act beyond school walls</div></div>
-          </div>
-        </div>
-        <div style="margin-top:14px">
-          <span class="isbn-tag">eISBN: 978-629-94581-9-7</span>
-          <span class="isbn-tag" style="margin-left:8px">First Print: February 2026</span>
-        </div>
-        <div style="margin-top:18px">
-          <a href="mailto:sales@egkhor.com.my" class="btn btn-red">📩 Order Now</a>
-        </div>
-      </div>
-      <div class="reveal">
-        <div class="ab-book-display">
-          <img class="ab-book big" src="https://egkhor.com.my/home/wp-content/uploads/2026/01/KeberanianUntukPeduli.png" alt="Front Cover">
-          <img class="ab-book sm" src="https://egkhor.com.my/home/wp-content/uploads/2026/02/Screenshot-2026-02-12-at-12.26.42-PM.png" alt="Back Cover">
-        </div>
-        <div style="margin-top:28px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:20px 22px;">
-          <p style="font-family:'Fredoka One',cursive;font-size:1rem;color:var(--gold);margin-bottom:10px;">📌 Best used alongside:</p>
-          <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
-            <img src="https://egkhor.com.my/home/wp-content/uploads/2026/01/AntibullyMOE.jpg" style="width:48px;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.4);" alt="App">
-            <div>
-              <div style="color:white;font-weight:800;font-size:.88rem;">EGK Anti-Bully Careline App</div>
-              <div style="color:#90CAF9;font-size:.75rem;">Report, track, and get support instantly</div>
-            </div>
-          </div>
-          <div style="display:flex;align-items:center;gap:12px;">
-            <img src="https://egkhor.com.my/home/wp-content/uploads/2026/01/PDRM.jpg" style="width:48px;border-radius:12px;box-shadow:0 4px 14px rgba(0,0,0,.4);" alt="PDRM App">
-            <div>
-              <div style="color:white;font-weight:800;font-size:.88rem;">EGK PDRMBorder App</div>
-              <div style="color:#90CAF9;font-size:.75rem;">Find your nearest police station by postcode</div>
-            </div>
+        <div class="unfpa-badge" style="margin-top:18px;">
+          <span class="unfpa-badge-icon">🇺🇳</span>
+          <div class="unfpa-badge-text">
+            <strong>UNFPA → UN Malaysia Liaison</strong>
+            <span>EHRI referred by UNFPA to United Nations Malaysia for review and potential partnership</span>
           </div>
         </div>
       </div>
@@ -562,331 +482,384 @@ footer{background:var(--navy);color:#90CAF9;padding:48px 20px 22px;}
   </div>
 </section>
 
-<!-- ══ SMART CHARACTER BOOKS ══ -->
-<section id="scbooks">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="section-label blue">Smart Character Education Series</span>
-      <h2 class="section-title">18 Core Values. <span>3 Languages.</span> One Malaysia.</h2>
-      <p class="section-desc">The Smart Character Education series is a KSSR-aligned enrichment module for Moral Education and Islamic Education — available in English, Bahasa Melayu, and Chinese, so every Malaysian primary child can learn noble values in their mother tongue.</p>
-    </div>
-    <div class="sc-books-grid">
-
-      <!-- English -->
-      <div class="sc-book-card reveal">
-        <div class="ribbon">🌟 UNESCO Endorsed</div>
-        <div class="sc-covers">
-          <img class="sc-cover" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/Smart-Character-Education.png" alt="EN Front">
-          <img class="sc-cover" src="https://egkhor.com.my/home/wp-content/uploads/2026/01/Screenshot-2026-01-09-at-5.04.49-PM.png" alt="EN Back">
-        </div>
-        <div class="sc-info">
-          <span class="sc-lang-tag lt-en">🇬🇧 English</span>
-          <div class="sc-title">Smart Character Education</div>
-          <div class="sc-sub">18 Core Values for Malaysian Primary Students</div>
-          <div class="sc-isbn">ISBN: 978-629-94581-1-1</div>
-          <a href="mailto:sales@egkhor.com.my" class="btn btn-red" style="font-size:.83rem;padding:9px 20px;margin-top:12px;">Order Now 📩</a>
-        </div>
-      </div>
-
-      <!-- Malay -->
-      <div class="sc-book-card reveal">
-        <div class="sc-covers">
-          <img class="sc-cover" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/EGK-Pendidikan-Karakter-Pintar.png" alt="BM Front">
-          <img class="sc-cover" src="https://egkhor.com.my/home/wp-content/uploads/2026/01/Screenshot-2026-01-09-at-4.48.15-PM.png" alt="BM Back">
-        </div>
-        <div class="sc-info">
-          <span class="sc-lang-tag lt-ms">🇲🇾 Bahasa Melayu</span>
-          <div class="sc-title">Pendidikan Karakter Pintar</div>
-          <div class="sc-sub">18 Nilai Teras untuk Murid Sekolah Rendah</div>
-          <div class="sc-isbn">ISBN: 978-629-94581-X-X</div>
-          <a href="mailto:sales@egkhor.com.my" class="btn btn-red" style="font-size:.83rem;padding:9px 20px;margin-top:12px;">Order Now 📩</a>
-        </div>
-      </div>
-
-      <!-- Chinese -->
-      <div class="sc-book-card reveal">
-        <div class="sc-covers">
-          <img class="sc-cover" src="https://egkhor.com.my/home/wp-content/uploads/2025/12/EGK智慧品格教育.png" alt="ZH Front">
-          <img class="sc-cover" src="https://egkhor.com.my/home/wp-content/uploads/2026/01/Screenshot-2026-01-09-at-4.15.45-PM.png" alt="ZH Back">
-        </div>
-        <div class="sc-info">
-          <span class="sc-lang-tag lt-zh">🀄 中文</span>
-          <div class="sc-title">智慧品格教育</div>
-          <div class="sc-sub">18个核心价值观</div>
-          <div class="sc-isbn">ISBN: 978-629-94581-X-X</div>
-          <a href="mailto:sales@egkhor.com.my" class="btn btn-red" style="font-size:.83rem;padding:9px 20px;margin-top:12px;">Order Now 📩</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ══ 18 VALUES ══ -->
-<section id="values">
-  <div class="container">
-    <div class="values-intro reveal">
-      <span class="section-label blue">KSSR Moral Education</span>
-      <h2 class="section-title">The <span>18 Core Values</span> Every Child Needs</h2>
-      <p class="section-desc">Drawn from universal values and the Rukun Negara, enriched with 21st-century approaches — fully aligned with Malaysia's vision for a globally competitive MADANI generation.</p>
-    </div>
-    <div class="values-grid">
-      <div class="val-card reveal"><span class="val-num">01</span><div class="val-icon">🙏</div><div class="val-name">Faith</div><div class="val-malay">Keimanan</div></div>
-      <div class="val-card reveal"><span class="val-num">02</span><div class="val-icon">💯</div><div class="val-name">Honesty</div><div class="val-malay">Kejujuran</div></div>
-      <div class="val-card reveal"><span class="val-num">03</span><div class="val-icon">🤝</div><div class="val-name">Tolerance</div><div class="val-malay">Toleransi</div></div>
-      <div class="val-card reveal"><span class="val-num">04</span><div class="val-icon">💪</div><div class="val-name">Self-Reliance</div><div class="val-malay">Berdikari</div></div>
-      <div class="val-card reveal"><span class="val-num">05</span><div class="val-icon">❤️</div><div class="val-name">Love &amp; Affection</div><div class="val-malay">Kasih Sayang</div></div>
-      <div class="val-card reveal"><span class="val-num">06</span><div class="val-icon">⚖️</div><div class="val-name">Justice</div><div class="val-malay">Keadilan</div></div>
-      <div class="val-card reveal"><span class="val-num">07</span><div class="val-icon">🌿</div><div class="val-name">Courage</div><div class="val-malay">Keberanian</div></div>
-      <div class="val-card reveal"><span class="val-num">08</span><div class="val-icon">🧹</div><div class="val-name">Cleanliness</div><div class="val-malay">Kebersihan</div></div>
-      <div class="val-card reveal"><span class="val-num">09</span><div class="val-icon">🌱</div><div class="val-name">Gratitude</div><div class="val-malay">Kesyukuran</div></div>
-      <div class="val-card reveal"><span class="val-num">10</span><div class="val-icon">🇲🇾</div><div class="val-name">National Spirit</div><div class="val-malay">Semangat Patriotik</div></div>
-      <div class="val-card reveal"><span class="val-num">11</span><div class="val-icon">🏡</div><div class="val-name">Love of Homeland</div><div class="val-malay">Cinta Negara</div></div>
-      <div class="val-card reveal"><span class="val-num">12</span><div class="val-icon">🏆</div><div class="val-name">Appreciating Achievement</div><div class="val-malay">Menghargai Kejayaan</div></div>
-      <div class="val-card reveal"><span class="val-num">13</span><div class="val-icon">😊</div><div class="val-name">Friendliness</div><div class="val-malay">Keramahan</div></div>
-      <div class="val-card reveal"><span class="val-num">14</span><div class="val-icon">🕊️</div><div class="val-name">Love for Peace</div><div class="val-malay">Cinta Keamanan</div></div>
-      <div class="val-card reveal"><span class="val-num">15</span><div class="val-icon">📚</div><div class="val-name">Love for Reading</div><div class="val-malay">Cinta Ilmu</div></div>
-      <div class="val-card reveal"><span class="val-num">16</span><div class="val-icon">🌍</div><div class="val-name">Environment Awareness</div><div class="val-malay">Kesedaran Alam</div></div>
-      <div class="val-card reveal"><span class="val-num">17</span><div class="val-icon">🫂</div><div class="val-name">Social Concern</div><div class="val-malay">Prihatin Sosial</div></div>
-      <div class="val-card reveal"><span class="val-num">18</span><div class="val-icon">✅</div><div class="val-name">Responsibility</div><div class="val-malay">Tanggungjawab</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ SCENARIOS PREVIEW ══ -->
-<section id="scenarios">
-  <div class="container">
-    <div class="scenarios-intro reveal">
-      <span class="section-label">Scenario Preview</span>
-      <h2 class="section-title">Real-Life <span>Bully Scenarios</span></h2>
-      <p class="section-desc">Each of the 100 scenarios presents a real situation, 3 response choices, and a reflection on consequences — teaching critical thinking, empathy, and moral courage.</p>
-    </div>
-    <div class="scenario-tabs">
-      <div class="stab active" onclick="showScenario('school',this)">🏫 School</div>
-      <div class="stab" onclick="showScenario('online',this)">📱 Online</div>
-      <div class="stab" onclick="showScenario('physical',this)">👊 Physical</div>
-      <div class="stab" onclick="showScenario('social',this)">🚪 Social</div>
-    </div>
-
-    <div id="sc-school" class="scenario-panel active">
-      <div class="scenario-card"><div class="sc-num">Scenario 1 · School</div><div class="sc-situation">A classmate is mocked about their school uniform.</div><div class="sc-reflection">Laughing with the bully strengthens bad behaviour. Quietly supporting the victim or reporting to an adult is most effective.</div><span class="sc-tag tag-school">Classroom</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 3 · School</div><div class="sc-situation">A student finds their bag hidden by a group of classmates.</div><div class="sc-reflection">Staying silent makes you complicit. Speaking up or getting a teacher prevents escalation.</div><span class="sc-tag tag-school">Classroom</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 7 · School</div><div class="sc-situation">A student is consistently left out during group projects.</div><div class="sc-reflection">Exclusion is social bullying. Include others — being kind costs nothing but means everything.</div><span class="sc-tag tag-school">Group Work</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 12 · School</div><div class="sc-situation">A new student is called hurtful names at the canteen.</div><div class="sc-reflection">Walking away is not enough. A kind word or sitting beside the new student changes everything.</div><span class="sc-tag tag-school">Canteen</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 18 · School</div><div class="sc-situation">Someone copies an exam answer and blames the seat-mate.</div><div class="sc-reflection">Courage to speak the truth protects the innocent and builds trust with teachers.</div><span class="sc-tag tag-school">Exam Hall</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 22 · School</div><div class="sc-situation">A student's artwork is destroyed by a jealous classmate.</div><div class="sc-reflection">Report calmly and with evidence. Anger escalates; calm reporting resolves.</div><span class="sc-tag tag-school">Art Class</span></div>
-    </div>
-
-    <div id="sc-online" class="scenario-panel">
-      <div class="scenario-card"><div class="sc-num">Scenario 30 · Online</div><div class="sc-situation">A student's photo is shared in a class group chat without permission.</div><div class="sc-reflection">Never share someone else's image without consent. Screenshot and report to a trusted adult immediately.</div><span class="sc-tag tag-online">WhatsApp</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 35 · Online</div><div class="sc-situation">Someone creates a fake social media account using a friend's name and photos.</div><div class="sc-reflection">This is identity theft and cyberbullying. Report to the platform AND involve parents or teachers.</div><span class="sc-tag tag-online">Social Media</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 41 · Online</div><div class="sc-situation">A gaming group excludes and mocks a player for losing.</div><div class="sc-reflection">Online spaces must have the same kindness as real life. Defend your teammate — it sets the tone for the whole group.</div><span class="sc-tag tag-online">Online Gaming</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 50 · Online</div><div class="sc-situation">Hurtful comments flood a student's social media post.</div><div class="sc-reflection">Don't engage with negative commenters. Screenshot, block, and tell a trusted adult. Use the EGK Anti-Bully Careline.</div><span class="sc-tag tag-online">Social Media</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 58 · Online</div><div class="sc-situation">A student is threatened via private message to keep a secret or face consequences.</div><div class="sc-reflection">This is digital coercion. Never keep such secrets — tell a trusted adult immediately and use the careline.</div><span class="sc-tag tag-online">Messaging App</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 65 · Online</div><div class="sc-situation">A rumour about a classmate spreads rapidly through multiple group chats.</div><div class="sc-reflection">Stop the chain — don't forward. Speak the truth to those around you. Rumours shrink when people refuse to share them.</div><span class="sc-tag tag-online">Group Chat</span></div>
-    </div>
-
-    <div id="sc-physical" class="scenario-panel">
-      <div class="scenario-card"><div class="sc-num">Scenario 5 · Physical</div><div class="sc-situation">A bigger student blocks the corridor and demands money from younger students.</div><div class="sc-reflection">Walk away safely, find another route, then report to a teacher or use the careline. Never confront alone.</div><span class="sc-tag tag-physical">Corridor</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 9 · Physical</div><div class="sc-situation">A student's book is snatched and thrown across the field.</div><div class="sc-reflection">Safety first. Witness it? Calmly report. Victim? Tell a teacher and document what happened.</div><span class="sc-tag tag-physical">Field</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 15 · Physical</div><div class="sc-situation">During PE, a student is deliberately pushed and injured.</div><div class="sc-reflection">Physical bullying is a serious offence. Seek medical attention first, then report formally — use the PDRMBorder app if needed.</div><span class="sc-tag tag-physical">PE Class</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 80 · Community</div><div class="sc-situation">Younger children are bullied at a community playground by older teens.</div><div class="sc-reflection">Contact a nearby adult, call a parent, or use the PDRMBorder app to find the nearest police station quickly.</div><span class="sc-tag tag-physical">Public Space</span></div>
-    </div>
-
-    <div id="sc-social" class="scenario-panel">
-      <div class="scenario-card"><div class="sc-num">Scenario 20 · Social</div><div class="sc-situation">A student is deliberately left out of a birthday invitation while the party is discussed loudly in front of them.</div><div class="sc-reflection">Exclusion is emotional bullying. If you see it happening, privately check in on the excluded person — your small kindness is enormous to them.</div><span class="sc-tag tag-social">Social Exclusion</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 33 · Social</div><div class="sc-situation">A student from a different race is mocked about their food during lunch.</div><div class="sc-reflection">Cultural sensitivity starts at the lunch table. Defend your friend's right to their culture.</div><span class="sc-tag tag-social">Cultural Bully</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 47 · Social</div><div class="sc-situation">Rumours about a student's family background are whispered and spread in the class.</div><div class="sc-reflection">Rumours destroy reputations. Refuse to participate. Kindly correct misinformation when you hear it.</div><span class="sc-tag tag-social">Rumour</span></div>
-      <div class="scenario-card"><div class="sc-num">Scenario 72 · Social</div><div class="sc-situation">A student with a disability is consistently mimicked and laughed at.</div><div class="sc-reflection">Everyone deserves dignity. Stand beside them publicly. Your support signals to the bully that this community does not accept cruelty.</div><span class="sc-tag tag-social">Disability Bias</span></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ 3 PRINCIPLES ══ -->
-<section id="principles">
-  <div class="container">
-    <div class="text-center reveal">
-      <span class="section-label gold">Core Principles</span>
-      <h2 class="section-title">Three Pillars of <span class="red">Safe Response</span></h2>
-      <p class="section-desc">Every scenario in the book is built on three guiding principles — empowering students, teachers, and parents to act wisely and safely.</p>
-    </div>
-    <div class="principles-grid">
-      <div class="princ-card reveal">
-        <div class="princ-icon">🛡️</div>
-        <div class="princ-title">Safety First</div>
-        <div class="princ-body">Always prioritise personal safety. Never confront a bully alone or in an unsafe situation. Remove yourself first, then report from a safe position.</div>
-      </div>
-      <div class="princ-card reveal">
-        <div class="princ-icon">🫂</div>
-        <div class="princ-title">Meaningful Support</div>
-        <div class="princ-body">Being a friend to the victim makes the biggest difference. A kind word, sitting beside someone, or privately checking in can change a life.</div>
-      </div>
-      <div class="princ-card reveal">
-        <div class="princ-icon">📢</div>
-        <div class="princ-title">Report Correctly</div>
-        <div class="princ-body">Involve trusted adults or authorities safely. Use the EGK Anti-Bully Careline App, the PDRMBorder App, or speak to a teacher — document, don't delete evidence.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ APPS ══ -->
+<!-- ══ 9 APPS ══ -->
 <section id="apps">
   <div class="container">
     <div class="text-center reveal">
-      <span class="section-label">Digital Tools</span>
-      <h2 class="section-title" style="color:white">Powerful <span style="color:var(--gold)">Apps</span> for Safety & Learning</h2>
-      <p class="section-desc" style="margin:0 auto">From reporting bullying instantly to finding your nearest police station — EGK's apps are your digital safety companions.</p>
+      <div class="sec-label">The 9 Crisis Applications</div>
+      <h2 class="sec-title">Every App a <span>Lifeline</span></h2>
+      <p class="sec-desc" style="margin:0 auto">Nine purpose-built applications covering every critical need — from first aid to family reunification, document safety to mesh communication. All free, all for humanity.</p>
     </div>
-    <div class="apps-grid" style="margin-top:46px">
+    <div class="apps-grid" style="margin-top:44px">
 
-      <!-- Anti-Bully Careline -->
+      <!-- FirstAid -->
       <div class="app-card reveal">
-        <div class="app-card-head">
-          <img class="app-icon-img" src="https://egkhor.com.my/home/wp-content/uploads/2026/01/AntibullyMOE.jpg" alt="Anti-Bully App">
-          <div>
-            <div class="app-card-title">EGK Anti-Bully Careline</div>
-            <div class="app-card-sub">Report · Track · Get Support</div>
+        <div class="app-card-top">
+          <div class="app-icon-placeholder" style="background:linear-gradient(135deg,#C0392B,#922B21);">🚑</div>
+          <div class="app-meta">
+            <div class="app-name">EGK FirstAid</div>
+            <span class="app-tag tag-critical">Critical Care</span>
           </div>
         </div>
-        <ul class="app-feats">
-          <li class="app-feat-item"><div class="feat-dot"></div>Report bullying incidents safely and confidentially</li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Direct careline connection for immediate support</li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Best used alongside the <em>Keberanian untuk Peduli</em> book</li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Available for iOS (App Store) & Android</li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Designed for students, parents & teachers</li>
-        </ul>
-        <div class="app-dl-row">
-          <a class="dl-btn" href="https://apps.apple.com/my/app/egk-anti-bully-careline/id6751313916" target="_blank">
-            <span class="dl-icon">🍎</span>
-            <div class="dl-txt"><small>Download on the</small><strong>App Store</strong></div>
-          </a>
-          <a class="dl-btn" href="https://docs.google.com/forms/d/e/1FAIpQLSfzLbXExUxUqVKPNHBOw_EI5B4wgoa8QdfyCU7s5wXh8VLnXw/viewform" target="_blank">
-            <span class="dl-icon">🤖</span>
-            <div class="dl-txt"><small>Register for</small><strong>Android Version</strong></div>
-          </a>
+        <div class="app-desc">Emergency trauma response guidance including CPR instructions, triage guidance, and essential medical information for situations where professional responders are unavailable.</div>
+        <div class="app-card-foot">
+          <a class="app-ios-btn" href="https://apps.apple.com/my/app/egk-firstaid/id6759848967" target="_blank">🍎 App Store</a>
+          <span class="app-offline-chip">⚡ Offline</span>
         </div>
       </div>
 
-      <!-- PDRM Border -->
+      <!-- IDVault -->
       <div class="app-card reveal">
-        <div class="app-card-head">
-          <img class="app-icon-img" src="https://egkhor.com.my/home/wp-content/uploads/2026/01/PDRM.jpg" alt="PDRM App">
-          <div>
-            <div class="app-card-title">EGK PDRMBorder</div>
-            <div class="app-card-sub">Find Your Nearest Police Station</div>
+        <div class="app-card-top">
+          <img class="app-icon" src="https://github.com/egkhor/EHRI/blob/main/IDVault.png?raw=true" alt="IDVault" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="app-icon-placeholder" style="background:linear-gradient(135deg,#D4A017,#8B6914);display:none;">🔐</div>
+          <div class="app-meta">
+            <div class="app-name">EGK IDVault</div>
+            <span class="app-tag tag-identity">Identity & Docs</span>
           </div>
         </div>
-        <ul class="app-feats">
-          <li class="app-feat-item"><div class="feat-dot"></div>Trace police station location by postcode instantly</div></li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Based on Malaysia PDRM's actual service boundaries</div></li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Know which station to go to for lodging a police report</div></li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Critical for bully victims needing to file a formal report</div></li>
-          <li class="app-feat-item"><div class="feat-dot"></div>iOS App Store — free to download</div></li>
-        </ul>
-        <div class="app-dl-row">
-          <a class="dl-btn" href="https://apps.apple.com/my/app/egk-pdrmborder/id6754896877" target="_blank">
-            <span class="dl-icon">🍎</span>
-            <div class="dl-txt"><small>Download on the</small><strong>App Store</strong></div>
-          </a>
-          <a class="dl-btn" href="https://apps.apple.com/my/app/egk-pdrmborder/id6754896877" target="_blank">
-            <span class="dl-icon">🚔</span>
-            <div class="dl-txt"><small>Find your</small><strong>PDRM Station</strong></div>
-          </a>
+        <div class="app-desc">Secure offline document vault for civilians to store passports, medical records, insurance documents, and critical personal documentation — safely encrypted on-device.</div>
+        <div class="app-card-foot">
+          <a class="app-ios-btn" href="https://apps.apple.com/my/app/egk-idvault/id6760119615" target="_blank">🍎 App Store</a>
+          <span class="app-offline-chip">⚡ Offline</span>
         </div>
       </div>
 
-      <!-- CharacterEdu AR -->
+      <!-- ResFinder -->
       <div class="app-card reveal">
-        <div class="app-card-head">
-          <div style="width:62px;height:62px;border-radius:16px;background:linear-gradient(135deg,#1042B0,#1565C0);display:flex;align-items:center;justify-content:center;font-size:1.8rem;box-shadow:0 6px 20px rgba(0,0,0,.4);">📱</div>
-          <div>
-            <div class="app-card-title">EGK CharacterEdu AR</div>
-            <div class="app-card-sub">Augmented Reality Character Learning</div>
+        <div class="app-card-top">
+          <img class="app-icon" src="https://github.com/egkhor/EHRI/blob/main/ResFinder.png?raw=true" alt="ResFinder" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="app-icon-placeholder" style="background:linear-gradient(135deg,#27AE60,#1A6B3C);display:none;">🍞</div>
+          <div class="app-meta">
+            <div class="app-name">EGK ResFinder</div>
+            <span class="app-tag tag-connect">Aid Locator</span>
           </div>
         </div>
-        <ul class="app-feats">
-          <li class="app-feat-item"><div class="feat-dot"></div>AR experiences for all 18 core values</li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Scan QR codes in the Smart Character Education book</li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Watch moral scenarios come alive in 3D AR</li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Quest-based activities for classroom & home</li>
-          <li class="app-feat-item"><div class="feat-dot"></div>Worth USD 29.99 — FREE with book purchase</li>
-        </ul>
-        <div style="background:rgba(255,214,0,.12);border:1px solid rgba(255,214,0,.3);border-radius:10px;padding:10px 14px;margin-top:4px;">
-          <p style="color:var(--gold);font-size:.82rem;font-weight:800;">🎁 Promo Code included with every book purchase</p>
-          <p style="color:#90CAF9;font-size:.75rem;margin-top:2px;">Scan QR code inside the book to download & activate</p>
+        <div class="app-desc">Locates nearby food supplies, water access points, and humanitarian aid distribution areas when supply chains and infrastructure are disrupted.</div>
+        <div class="app-card-foot">
+          <a class="app-ios-btn" href="https://apps.apple.com/my/app/egk-resfinder/id6760085577" target="_blank">🍎 App Store</a>
+          <span class="app-offline-chip">⚡ Offline</span>
         </div>
       </div>
 
-      <!-- Combined use card -->
-      <div class="app-card reveal" style="background:rgba(255,214,0,.08);border-color:rgba(255,214,0,.25);">
-        <div style="font-family:'Fredoka One',cursive;font-size:1.1rem;color:var(--gold);margin-bottom:14px;">📦 Complete EGK Safety &amp; Character Bundle</div>
-        <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:18px;">
-          <div style="display:flex;align-items:center;gap:10px;">
-            <span style="font-size:1.2rem;">📖</span>
-            <span style="font-size:.85rem;color:white;">Keberanian untuk Peduli (Anti-Bully book)</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            <span style="font-size:1.2rem;">🌟</span>
-            <span style="font-size:.85rem;color:white;">Smart Character Education (3 languages)</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            <span style="font-size:1.2rem;">📱</span>
-            <span style="font-size:.85rem;color:white;">EGK Anti-Bully Careline App</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            <span style="font-size:1.2rem;">🚔</span>
-            <span style="font-size:.85rem;color:white;">EGK PDRMBorder App</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:10px;">
-            <span style="font-size:1.2rem;">🥽</span>
-            <span style="font-size:.85rem;color:white;">EGK CharacterEdu AR App (free with book)</span>
+      <!-- SafeRoute -->
+      <div class="app-card reveal">
+        <div class="app-card-top">
+          <img class="app-icon" src="https://github.com/egkhor/EHRI/blob/main/saferoute.png?raw=true" alt="SafeRoute" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="app-icon-placeholder" style="background:linear-gradient(135deg,#2980B9,#1A5276);display:none;">🗺️</div>
+          <div class="app-meta">
+            <div class="app-name">EGK SafeRoute WarTime</div>
+            <span class="app-tag tag-critical">Evacuation</span>
           </div>
         </div>
-        <a href="mailto:sales@egkhor.com.my" class="btn btn-gold" style="width:100%;justify-content:center;">📩 Enquire for School Bundle</a>
+        <div class="app-desc">Evacuation and navigation tool helping civilians identify safer routes and avoid hazardous areas during active conflict situations and disaster zones.</div>
+        <div class="app-card-foot">
+          <a class="app-ios-btn" href="https://apps.apple.com/my/app/egk-saferoute-wartime/id6759999546" target="_blank">🍎 App Store</a>
+          <span class="app-offline-chip">⚡ Offline</span>
+        </div>
+      </div>
+
+      <!-- UnityRefuge -->
+      <div class="app-card reveal">
+        <div class="app-card-top">
+          <img class="app-icon" src="https://github.com/egkhor/EHRI/blob/main/shelter.jpg?raw=true" alt="UnityRefuge" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="app-icon-placeholder" style="background:linear-gradient(135deg,#8E44AD,#5B2C6F);display:none;">🏕️</div>
+          <div class="app-meta">
+            <div class="app-name">EGK UnityRefuge</div>
+            <span class="app-tag tag-connect">Shelter Finder</span>
+          </div>
+        </div>
+        <div class="app-desc">Assists displaced individuals in locating refugee shelters, humanitarian camps, and civilian safe zones — helping people find safety when displacement occurs.</div>
+        <div class="app-card-foot">
+          <a class="app-ios-btn" href="https://apps.apple.com/my/app/egk-unityrefuge/id6759909458" target="_blank">🍎 App Store</a>
+          <span class="app-offline-chip">⚡ Offline</span>
+        </div>
+      </div>
+
+      <!-- WarCom -->
+      <div class="app-card reveal">
+        <div class="app-card-top">
+          <img class="app-icon" src="https://github.com/egkhor/EHRI/blob/main/warcom.png?raw=true" alt="WarCom" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="app-icon-placeholder" style="background:linear-gradient(135deg,#1A8C7A,#0E4D43);display:none;">📡</div>
+          <div class="app-meta">
+            <div class="app-name">EGK WarCom</div>
+            <span class="app-tag tag-connect">Mesh Comms</span>
+          </div>
+        </div>
+        <div class="app-desc">Decentralized communication via Wi-Fi and Bluetooth mesh networking — messages propagate between nearby devices even when cellular networks and internet are completely unavailable.</div>
+        <div class="app-card-foot">
+          <a class="app-ios-btn" href="https://apps.apple.com/my/app/egk-warcom/id6759859507" target="_blank">🍎 App Store</a>
+          <span class="app-offline-chip">📡 Mesh</span>
+        </div>
+      </div>
+
+      <!-- VolunteerCo -->
+      <div class="app-card reveal">
+        <div class="app-card-top">
+          <img class="app-icon" src="https://github.com/egkhor/EHRI/blob/main/volunteer.png?raw=true" alt="VolunteerCo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="app-icon-placeholder" style="background:linear-gradient(135deg,#E67E22,#A04000);display:none;">🙋</div>
+          <div class="app-meta">
+            <div class="app-name">EGK VolunteerCo</div>
+            <span class="app-tag tag-connect">Volunteer Network</span>
+          </div>
+        </div>
+        <div class="app-desc">Connects skilled volunteers with organizations requiring assistance during disasters and humanitarian operations — matching capability with need, fast.</div>
+        <div class="app-card-foot">
+          <a class="app-ios-btn" href="https://apps.apple.com/my/app/egk-volunteerco/id6760182716" target="_blank">🍎 App Store</a>
+          <span class="app-offline-chip">🌐 Network</span>
+        </div>
+      </div>
+
+      <!-- FindMyFamily -->
+      <div class="app-card reveal">
+        <div class="app-card-top">
+          <img class="app-icon" src="https://github.com/egkhor/EHRI/blob/main/findmyfamily.png?raw=true" alt="FindMyFamily" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="app-icon-placeholder" style="background:linear-gradient(135deg,#E91E8C,#8B105A);display:none;">👨‍👩‍👧</div>
+          <div class="app-meta">
+            <div class="app-name">EGK FindMyFamily</div>
+            <span class="app-tag tag-connect">Reunification</span>
+          </div>
+        </div>
+        <div class="app-desc">Humanitarian reunification platform allowing individuals to report missing persons and reconnect separated family members — restoring the most precious bonds in crisis.</div>
+        <div class="app-card-foot">
+          <a class="app-ios-btn" href="https://apps.apple.com/my/app/egk-findmyfamily/id6760284994" target="_blank">🍎 App Store</a>
+          <span class="app-offline-chip">🔗 Sync</span>
+        </div>
+      </div>
+
+      <!-- NukeShield -->
+      <div class="app-card nuke reveal">
+        <div class="app-card-top">
+          <img class="app-icon" src="https://github.com/egkhor/EHRI/blob/main/nuke.png?raw=true" alt="NukeShield" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+          <div class="app-icon-placeholder" style="background:linear-gradient(135deg,#8B0000,#3D0000);display:none;">☢️</div>
+          <div class="app-meta">
+            <div class="app-name">EGK NukeShield</div>
+            <span class="app-tag tag-critical">Nuclear Guide</span>
+          </div>
+        </div>
+        <div class="app-desc">Fully offline nuclear and radiological decontamination guide built for civilians — critical guidance on shelter-in-place, decontamination procedures, and radiation safety.</div>
+        <div class="app-card-foot">
+          <a class="app-ios-btn" href="https://apps.apple.com/my/app/egk-nukeshield/id6760960519" target="_blank">🍎 App Store</a>
+          <span class="app-offline-chip">⚡ Offline</span>
+        </div>
       </div>
 
     </div>
-  </div>
-</section>
 
-<!-- ══ PROF QUOTE ══ -->
-<section id="prof" style="padding:70px 20px;">
-  <div class="container">
-    <div class="prof-inner reveal">
-      <span class="section-label blue" style="margin-bottom:20px;display:inline-block;">Endorsed by World-Class Educators</span>
-      <div class="prof-quote">
-        Children do not learn the deepest moral values through lectures, but through experience — by doing, playing, and discovering for themselves. Augmented Reality (AR) allows us to bring moral situations directly into their world. The EGK Smart Character Education book and app represent the finest example of how 21st-century technology can powerfully strengthen character education in Malaysian primary schools.
-      </div>
-      <div class="prof-name">Prof. Dr. Sugata Mitra</div>
-      <div class="prof-role">Winner of the 2013 TED Prize (USD 1 million) · Founder of "Hole-in-the-Wall" & "School in the Cloud"<br>Professor Emeritus, NIIT University, India</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══ CARELINE ══ -->
-<section id="careline">
-  <div class="container">
-    <div class="careline-inner reveal">
-      <span class="section-label" style="background:rgba(255,255,255,.2);color:white;border:1px solid rgba(255,255,255,.3);">🆘 Need Help Now?</span>
-      <h2 class="section-title" style="color:white;margin-top:10px;">EGK Anti-Bully <span style="color:var(--gold)">Careline</span></h2>
-      <p class="careline-desc">If you or someone you know is being bullied — you are not alone. Use the EGK Anti-Bully Careline App to report, get support, and connect with help immediately.</p>
-      <div class="careline-steps">
-        <div class="cstep"><span class="cstep-num">1</span><div class="cstep-label">Download App</div></div>
-        <div class="cstep"><span class="cstep-num">2</span><div class="cstep-label">Report Incident</div></div>
-        <div class="cstep"><span class="cstep-num">3</span><div class="cstep-label">Get Supported</div></div>
-        <div class="cstep"><span class="cstep-num">4</span><div class="cstep-label">Stay Safe</div></div>
-      </div>
-      <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
-        <a href="https://apps.apple.com/my/app/egk-anti-bully-careline/id6751313916" target="_blank" class="btn btn-gold">🍎 iOS App Store</a>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfzLbXExUxUqVKPNHBOw_EI5B4wgoa8QdfyCU7s5wXh8VLnXw/viewform" target="_blank" class="btn btn-outline" style="border-color:rgba(255,255,255,.5);">🤖 Android Registration</a>
-        <a href="https://apps.apple.com/my/app/egk-pdrmborder/id6754896877" target="_blank" class="btn btn-outline" style="border-color:rgba(255,255,255,.5);">🚔 PDRMBorder App</a>
-      </div>
-      <p style="color:rgba(255,255,255,.55);font-size:.8rem;margin-top:20px;">
-        📍 If in immediate danger, contact PDRM: <strong style="color:white">999</strong> · 
-        Talianlah KKM: <strong style="color:white">15999</strong> · 
-        Talian Kasih: <strong style="color:white">15999</strong>
+    <!-- Mushi footer note -->
+    <div style="margin-top:36px;text-align:center;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;" class="reveal">
+      <img src="https://github.com/egkhor/EHRI/blob/main/MUSHI.png?raw=true" style="width:60px;filter:drop-shadow(0 6px 14px rgba(232,160,32,.2));animation:mfloat 4s ease-in-out infinite;" alt="Mushi">
+      <p style="font-size:.9rem;color:#64748B;max-width:500px;line-height:1.7;">
+        <strong style="color:var(--amber)">Mushi says:</strong> "Even in the darkest moments, you are not alone. 
+        These apps are here to help. Download them before you need them. 🌸"
       </p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ ARCHITECTURE ══ -->
+<section id="arch">
+  <div class="container">
+    <div class="arch-grid">
+      <div class="reveal">
+        <div class="sec-label">Technical Architecture</div>
+        <h2 class="sec-title">Offline-First.<br><span>Resilience by Design.</span></h2>
+        <p style="font-size:.95rem;color:#64748B;line-height:1.8;margin-bottom:22px;">
+          During wars and disasters, the first thing to fail is connectivity. 
+          EHRI apps are architected from the ground up to function without cellular networks, 
+          internet, or centralized infrastructure.
+        </p>
+        <div class="arch-feats">
+          <div class="arch-feat">
+            <span class="arch-feat-icon">📱</span>
+            <div><div class="arch-feat-title">On-Device Processing</div><div class="arch-feat-body">All critical data and guidance is stored locally. No server dependency for core functions.</div></div>
+          </div>
+          <div class="arch-feat">
+            <span class="arch-feat-icon">📡</span>
+            <div><div class="arch-feat-title">Wi-Fi & Bluetooth Mesh (WarCom)</div><div class="arch-feat-body">Messages hop between nearby devices, creating an ad-hoc network without any infrastructure.</div></div>
+          </div>
+          <div class="arch-feat">
+            <span class="arch-feat-icon">🔒</span>
+            <div><div class="arch-feat-title">Privacy-First Encryption</div><div class="arch-feat-body">Sensitive documents in IDVault are encrypted on-device. No cloud upload required.</div></div>
+          </div>
+          <div class="arch-feat">
+            <span class="arch-feat-icon">🍎</span>
+            <div><div class="arch-feat-title">Built on Apple Platform</div><div class="arch-feat-body">Leveraging Apple's secure, capable development ecosystem for privacy-focused resilient apps.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="arch-visual reveal">
+        <img class="arch-mushi" src="https://github.com/egkhor/EHRI/blob/main/MUSHI.png?raw=true" alt="Mushi">
+        <div style="margin-top:24px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-radius:14px;padding:20px 22px;">
+          <div style="font-size:.78rem;color:var(--amber);font-weight:700;text-transform:uppercase;letter-spacing:1px;margin-bottom:12px;">App Connectivity Matrix</div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+              <span style="color:#94A3B8;">EGK FirstAid</span><span style="color:#86EFAC;font-weight:700;">⚡ Full Offline</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+              <span style="color:#94A3B8;">EGK IDVault</span><span style="color:#86EFAC;font-weight:700;">⚡ Full Offline</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+              <span style="color:#94A3B8;">EGK SafeRoute</span><span style="color:#86EFAC;font-weight:700;">⚡ Full Offline</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+              <span style="color:#94A3B8;">EGK NukeShield</span><span style="color:#86EFAC;font-weight:700;">⚡ Full Offline</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+              <span style="color:#94A3B8;">EGK WarCom</span><span style="color:#5EEAD4;font-weight:700;">📡 Mesh P2P</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+              <span style="color:#94A3B8;">EGK ResFinder</span><span style="color:#FCD34D;font-weight:700;">🌐 + Offline</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+              <span style="color:#94A3B8;">EGK UnityRefuge</span><span style="color:#FCD34D;font-weight:700;">🌐 + Offline</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+              <span style="color:#94A3B8;">EGK FindMyFamily</span><span style="color:#FCD34D;font-weight:700;">🌐 + Sync</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;font-size:.8rem;">
+              <span style="color:#94A3B8;">EGK VolunteerCo</span><span style="color:#FCD34D;font-weight:700;">🌐 Network</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ SDGs ══ -->
+<section id="sdgs">
+  <div class="container">
+    <div class="text-center reveal">
+      <div class="sec-label">United Nations SDGs</div>
+      <h2 class="sec-title">Six <span class="amber">Sustainable Development Goals</span></h2>
+      <p class="sec-desc" style="margin:0 auto">EHRI directly serves six UN Sustainable Development Goals — demonstrating that civic technology can advance global humanitarian commitments.</p>
+    </div>
+    <div class="sdgs-grid">
+      <div class="sdg-card reveal">
+        <div class="sdg-num">3</div>
+        <div>
+          <div class="sdg-title">Good Health & Well-Being</div>
+          <div class="sdg-body">EGK FirstAid delivers CPR, triage, and medical guidance when professionals are unavailable — directly saving lives.</div>
+        </div>
+      </div>
+      <div class="sdg-card reveal">
+        <div class="sdg-num">9</div>
+        <div>
+          <div class="sdg-title">Industry, Innovation & Infrastructure</div>
+          <div class="sdg-body">Offline-first mesh networking (WarCom) and resilient app architecture demonstrates innovation for crisis infrastructure.</div>
+        </div>
+      </div>
+      <div class="sdg-card reveal">
+        <div class="sdg-num">10</div>
+        <div>
+          <div class="sdg-title">Reduced Inequalities</div>
+          <div class="sdg-body">All 9 apps are free. Civilians in conflict zones, regardless of economic status, can access critical tools equally.</div>
+        </div>
+      </div>
+      <div class="sdg-card reveal">
+        <div class="sdg-num">11</div>
+        <div>
+          <div class="sdg-title">Sustainable Cities & Communities</div>
+          <div class="sdg-body">SafeRoute, UnityRefuge, and ResFinder help communities navigate crises and maintain community cohesion under duress.</div>
+        </div>
+      </div>
+      <div class="sdg-card reveal">
+        <div class="sdg-num">16</div>
+        <div>
+          <div class="sdg-title">Peace, Justice & Strong Institutions</div>
+          <div class="sdg-body">FindMyFamily supports humanitarian law by facilitating family reunification — a core principle of international humanitarian standards.</div>
+        </div>
+      </div>
+      <div class="sdg-card reveal">
+        <div class="sdg-num">17</div>
+        <div>
+          <div class="sdg-title">Partnerships for the Goals</div>
+          <div class="sdg-body">VolunteerCo and EHRI's open collaboration model actively builds partnerships between civic developers and humanitarian organizations.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ UN LETTER ══ -->
+<section id="un">
+  <div class="container">
+    <div class="un-inner reveal">
+      <div class="sec-label" style="justify-content:center;">UN Collaboration</div>
+      <span class="un-emblem">🇺🇳</span>
+      <h2 class="sec-title">Seeking <span>UN Partnership</span></h2>
+      <p style="font-size:.92rem;color:#64748B;line-height:1.8;">
+        EGK has written formally to the United Nations Humanitarian Coordination and Innovation Teams. 
+        UNFPA has already referred this initiative to UN Malaysia for review. 
+        We respectfully seek three areas of collaboration:
+      </p>
+
+      <div class="collab-items" style="margin-top:28px;">
+        <div class="collab-item reveal">
+          <div class="ci-icon">📢</div>
+          <div class="ci-title">Awareness Dissemination</div>
+          <div class="ci-body">Support in spreading awareness of EHRI apps through UN humanitarian communication channels to affected populations.</div>
+        </div>
+        <div class="collab-item reveal">
+          <div class="ci-icon">🔬</div>
+          <div class="ci-title">Innovation Engagement</div>
+          <div class="ci-body">Engagement with UN innovation bodies to explore how EHRI tools complement existing humanitarian technology initiatives.</div>
+        </div>
+        <div class="collab-item reveal">
+          <div class="ci-icon">🤝</div>
+          <div class="ci-title">EGK × UN Emblem</div>
+          <div class="ci-body">Permission to integrate the UN emblem in apps as part of "EGK × United Nations – Technology for Humanity" civic collaboration.</div>
+        </div>
+      </div>
+
+      <div class="un-letter reveal" style="margin-top:36px;">
+        <p>
+          <strong>Dear United Nations Humanitarian Coordination and Innovation Teams,</strong>
+        </p>
+        <p>
+          I am writing to respectfully present a humanitarian technology initiative developed to support 
+          civilian safety and resilience during crises, armed conflicts, and natural disasters. In light of 
+          escalating humanitarian challenges globally, including the ongoing Middle East crisis, I have released 
+          a suite of nine mobile applications designed specifically for civilian survival, coordination, and 
+          humanitarian assistance — collectively the <strong>EGK Humanitarian Resilience Initiative (EHRI)</strong>.
+        </p>
+        <p>
+          A key principle is <strong>offline-first architecture</strong>. During war and disasters, 
+          cellular service and internet often become unavailable. These applications are designed to 
+          function without reliance on centralized infrastructure, allowing civilians to access critical 
+          tools even in low-connectivity environments.
+        </p>
+        <p>
+          In recognition of the urgent humanitarian need, <strong>all applications are currently being made 
+          available free of charge</strong> to ensure the widest possible access. This initiative is not 
+          commercial in nature — it is developed as a civic humanitarian effort with the guiding principle 
+          that <em>technology should serve humanity, particularly during times of crisis and vulnerability.</em>
+        </p>
+        <p style="color:#64748B;font-size:.85rem;">— Isaac Khor Eng Gian, EGK Microelectronic Solutions Group Sdn. Bhd., Penang, Malaysia</p>
+      </div>
+
+      <img class="un-mushi" src="https://github.com/egkhor/EHRI/blob/main/MUSHI.png?raw=true" alt="Mushi">
+      <p style="font-size:.82rem;color:#475569;margin-top:8px;font-style:italic;">"Mushi believes every child and family deserves safety. 🌸 Please partner with us."</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ UNFPA ══ -->
+<section id="unfpa" style="padding:60px 24px;">
+  <div class="container">
+    <div class="unfpa-inner reveal">
+      <div class="sec-label" style="justify-content:center;">Recognition</div>
+      <div class="unfpa-quote">
+        UNFPA has referred EHRI to <span class="highlight">UN Malaysia</span><br>
+        for review and potential partnership.
+      </div>
+      <div class="unfpa-org">🇺🇳 United Nations Population Fund (UNFPA) → UN Malaysia</div>
+      <div class="unfpa-sub">Penang, Malaysia · EGK Microelectronic Solutions Group Sdn. Bhd.</div>
+      <div style="margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;">
+        <a href="mailto:isaac@egkhor.com.my" class="btn btn-teal">🤝 Partner with EHRI</a>
+        <a href="https://egkhor.com.my" target="_blank" class="btn btn-ghost">🌐 Visit EGK Website</a>
+      </div>
     </div>
   </div>
 </section>
@@ -896,28 +869,46 @@ footer{background:var(--navy);color:#90CAF9;padding:48px 20px 22px;}
   <div class="container">
     <div class="founder-grid">
       <div class="founder-card reveal">
-        <div class="founder-avatar">👨‍💼</div>
+        <img class="founder-mushi" src="https://github.com/egkhor/EHRI/blob/main/MUSHI.png?raw=true" alt="Mushi">
         <div class="founder-name">Isaac Khor Eng Gian</div>
-        <div class="founder-role">Author, Founder & CEO</div>
+        <div class="founder-role">Founder, Developer & CEO</div>
         <div class="founder-co">EGK Microelectronic Solutions Group</div>
-        <div style="margin-top:16px;">
-          <img src="https://egkhor.com.my/home/wp-content/uploads/2026/02/cropped-IMG_7598.png" alt="EGK" style="height:44px;filter:brightness(0) invert(1);opacity:.8;">
+        <img class="founder-egk" src="https://egkhor.com.my/home/wp-content/uploads/2026/02/cropped-IMG_7598.png" alt="EGK Logo">
+        <div class="founder-contacts">
+          <div class="fc"><span class="fc-i">📍</span>PO Box 4, Bukit Mertajam, 14000 Penang, Malaysia</div>
+          <div class="fc"><span class="fc-i">📞</span>+601 2625 1171</div>
+          <div class="fc"><span class="fc-i">✉️</span><a href="mailto:isaac@egkhor.com.my" style="color:var(--teal2);">isaac@egkhor.com.my</a></div>
+          <div class="fc"><span class="fc-i">🌐</span><a href="https://egkhor.com.my" target="_blank" style="color:var(--teal2);">egkhor.com.my</a></div>
         </div>
       </div>
-      <div class="reveal">
-        <span class="section-label">About the Author</span>
-        <h2 class="section-title">One Decision to <span class="red">Care</span></h2>
+      <div class="founder-text reveal">
+        <div class="sec-label">About the Founder</div>
+        <h2 class="sec-title">One Developer.<br><span>Nine Lifelines.</span></h2>
         <blockquote class="founder-quote">
-          "Keberanian untuk Peduli was written to invite readers to think, not to punish; to understand, not to point fingers. Every scenario in this book reflects a real situation that can happen in schools — in classrooms, on the field, in peer groups, and in the digital world. It invites readers to realise that every choice, whether to act or to stay silent, has an impact on others."
+          "This initiative is not commercial in nature. It is developed as a civic humanitarian effort 
+          with the guiding principle that technology should serve humanity — particularly during times 
+          of crisis and vulnerability. I would be honored if the United Nations could review this initiative."
         </blockquote>
-        <p style="font-size:.92rem;color:#4a5a7a;line-height:1.75;margin-bottom:16px;">
-          Proudly published in Penang, Malaysia — Isaac Khor's anti-bully initiative and Smart Character Education series represent a commitment to every Malaysian child's safety, dignity, and moral development.
+        <p>
+          Isaac Khor Eng Gian is the founder of EGK Microelectronic Solutions Group Sdn. Bhd., 
+          based in Penang, Malaysia. Beyond EHRI, EGK has developed the EGK AI Adventure educational series 
+          (Malaysia's first KSSR-aligned AI literacy books), the EGK Anti-Bully Careline initiative, 
+          and the Smart Character Education series — all reflecting a deep commitment to using technology 
+          for social good.
         </p>
-        <div class="contact-list">
-          <div class="c-item"><span class="c-icon">📍</span>8, Lintang Beringin 8, Diamond Valley Industrial Park, 11960 Batu Maung, Penang</div>
-          <div class="c-item"><span class="c-icon">📞</span>+604-505 9700</div>
-          <div class="c-item"><span class="c-icon">✉️</span><a href="mailto:sales@egkhor.com.my" style="color:var(--royal)">sales@egkhor.com.my</a></div>
-          <div class="c-item"><span class="c-icon">🌐</span><a href="https://www.egkhor.com.my" target="_blank" style="color:var(--royal)">www.egkhor.com.my</a></div>
+        <p>
+          The nine EHRI applications were built on Apple's development platform. 
+          Isaac extends sincere appreciation to Apple Inc. for enabling independent civic developers 
+          to create privacy-focused, resilient humanitarian tools.
+        </p>
+        <div style="margin-top:18px;background:rgba(14,110,106,.08);border:1px solid rgba(14,110,106,.2);border-radius:12px;padding:16px 18px;">
+          <div style="font-size:.8rem;font-weight:700;color:var(--teal2);margin-bottom:8px;">🇲🇾 EGK Civic Initiatives Portfolio</div>
+          <div style="display:flex;flex-direction:column;gap:5px;">
+            <div style="font-size:.78rem;color:#64748B;">📱 <strong style="color:#94A3B8;">EHRI</strong> — 9 Humanitarian Crisis Apps</div>
+            <div style="font-size:.78rem;color:#64748B;">🤖 <strong style="color:#94A3B8;">EGK AI Adventure</strong> — Malaysia's First Primary AI Education Series</div>
+            <div style="font-size:.78rem;color:#64748B;">🛡️ <strong style="color:#94A3B8;">EGK Anti-Bully Careline</strong> — Anti-Bullying Platform & Books</div>
+            <div style="font-size:.78rem;color:#64748B;">🌟 <strong style="color:#94A3B8;">Smart Character Education</strong> — 18 Core Values, 3 Languages</div>
+          </div>
         </div>
       </div>
     </div>
@@ -928,66 +919,55 @@ footer{background:var(--navy);color:#90CAF9;padding:48px 20px 22px;}
 <footer>
   <div class="footer-inner">
     <div>
-      <div class="footer-logo"><img src="https://egkhor.com.my/home/wp-content/uploads/2026/02/cropped-IMG_7598.png" alt="EGK"></div>
+      <div class="footer-brand"><img src="https://egkhor.com.my/home/wp-content/uploads/2026/02/cropped-IMG_7598.png" alt="EGK"></div>
       <div class="footer-about">
         EGK Microelectronic Solutions Group Sdn. Bhd.<br>
-        Anti-Bully Careline · Smart Character Education Series<br>
-        KSSR Aligned · 18 Core Values · 3 Languages · 100 Scenarios<br><br>
-        Co. Reg: 202501002992 (1604405-X)<br>
-        © 2026 EGK Microelectronic Solutions Group Sdn. Bhd. All rights reserved.
+        EGK Humanitarian Resilience Initiative (EHRI)<br>
+        9 Free Crisis Apps · Offline-First · Technology for Humanity<br><br>
+        PO Box 4, Bukit Mertajam, 14000 Penang, Malaysia<br>
+        © 2026 EGK Microelectronic Solutions Group Sdn. Bhd.
       </div>
     </div>
     <div>
-      <div class="footer-title">Quick Links</div>
+      <div class="footer-title">The 9 Apps</div>
       <ul class="footer-links">
-        <li><a href="#about">About the Initiative</a></li>
-        <li><a href="#antibully">Keberanian untuk Peduli</a></li>
-        <li><a href="#scbooks">Character Education Books</a></li>
-        <li><a href="#values">18 Core Values</a></li>
-        <li><a href="#scenarios">Bully Scenarios</a></li>
-        <li><a href="#apps">Apps</a></li>
-        <li><a href="#careline">🆘 Anti-Bully Careline</a></li>
+        <li><a href="https://apps.apple.com/my/app/egk-firstaid/id6759848967" target="_blank">🚑 EGK FirstAid</a></li>
+        <li><a href="https://apps.apple.com/my/app/egk-idvault/id6760119615" target="_blank">🔐 EGK IDVault</a></li>
+        <li><a href="https://apps.apple.com/my/app/egk-resfinder/id6760085577" target="_blank">🍞 EGK ResFinder</a></li>
+        <li><a href="https://apps.apple.com/my/app/egk-saferoute-wartime/id6759999546" target="_blank">🗺️ EGK SafeRoute</a></li>
+        <li><a href="https://apps.apple.com/my/app/egk-unityrefuge/id6759909458" target="_blank">🏕️ EGK UnityRefuge</a></li>
+        <li><a href="https://apps.apple.com/my/app/egk-warcom/id6759859507" target="_blank">📡 EGK WarCom</a></li>
+        <li><a href="https://apps.apple.com/my/app/egk-volunteerco/id6760182716" target="_blank">🙋 EGK VolunteerCo</a></li>
+        <li><a href="https://apps.apple.com/my/app/egk-findmyfamily/id6760284994" target="_blank">👨‍👩‍👧 EGK FindMyFamily</a></li>
+        <li><a href="https://apps.apple.com/my/app/egk-nukeshield/id6760960519" target="_blank">☢️ EGK NukeShield</a></li>
       </ul>
     </div>
     <div>
-      <div class="footer-title">Download Apps</div>
+      <div class="footer-title">Contact & Collaborate</div>
       <ul class="footer-links">
-        <li><a href="https://apps.apple.com/my/app/egk-anti-bully-careline/id6751313916" target="_blank">🍎 Anti-Bully Careline (iOS)</a></li>
-        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfzLbXExUxUqVKPNHBOw_EI5B4wgoa8QdfyCU7s5wXh8VLnXw/viewform" target="_blank">🤖 Anti-Bully (Android)</a></li>
-        <li><a href="https://apps.apple.com/my/app/egk-pdrmborder/id6754896877" target="_blank">🚔 PDRMBorder (iOS)</a></li>
-        <li><a href="mailto:sales@egkhor.com.my">📩 Order Books</a></li>
-        <li><a href="tel:+60450597000">📞 Call Us</a></li>
+        <li><a href="mailto:isaac@egkhor.com.my">✉️ Email Isaac</a></li>
+        <li><a href="https://egkhor.com.my" target="_blank">🌐 EGK Website</a></li>
+        <li><a href="#un">🇺🇳 UN Partnership Letter</a></li>
+        <li><a href="#sdgs">📋 UN SDG Alignment</a></li>
+        <li><a href="tel:+60126251171">📞 +601 2625 1171</a></li>
       </ul>
-      <div style="margin-top:18px;">
-        <div style="font-size:.78rem;color:#607d8b;margin-bottom:6px;">Emergency Hotlines 🇲🇾</div>
-        <div style="font-size:.75rem;color:#607d8b;line-height:2;">
-          PDRM: <strong style="color:#90CAF9">999</strong><br>
-          Talian Kasih: <strong style="color:#90CAF9">15999</strong><br>
-          KKM: <strong style="color:#90CAF9">1800-88-1000</strong>
-        </div>
+      <div style="margin-top:20px;padding:14px;background:rgba(232,160,32,.07);border:1px solid rgba(232,160,32,.2);border-radius:10px;">
+        <div style="font-size:.75rem;font-weight:700;color:var(--amber);margin-bottom:6px;">🇺🇳 UN Recognition</div>
+        <div style="font-size:.74rem;color:#475569;line-height:1.6;">UNFPA → Referred to UN Malaysia<br>Seeking formal UN collaboration</div>
       </div>
     </div>
   </div>
   <div class="footer-bottom">
-    <span>© 2026 EGK Microelectronic Solutions Group Sdn. Bhd. · Proudly Made in Penang 🇲🇾</span>
-    <span style="color:var(--gold)">🛡️ Together we end bullying.</span>
+    <span>© 2026 EGK Microelectronic Solutions Group Sdn. Bhd. · 🇲🇾 Penang, Malaysia</span>
+    <span style="color:var(--teal2);">🌸 Technology for Humanity · EHRI</span>
   </div>
 </footer>
 
 <script>
-// Scenario tabs
-function showScenario(id, el) {
-  document.querySelectorAll('.scenario-panel').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.stab').forEach(t=>t.classList.remove('active'));
-  document.getElementById('sc-'+id).classList.add('active');
-  el.classList.add('active');
-}
-
-// Scroll reveal
-const observer = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}});
+const obs = new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}});
 },{threshold:0.1});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>
 </html>
